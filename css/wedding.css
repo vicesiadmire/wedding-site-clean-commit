@@ -1,0 +1,4491 @@
+/* ======================== Begin Reset*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+display: block;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+line-height: 1;
+    margin: 0 0;
+}
+
+ol, ul {
+list-style: none;
+}
+
+blockquote, q {
+quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+content: '';
+content: none;
+}
+
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+
+textarea {
+    margin: 0;
+    padding: 0;
+    width: 0;
+}
+
+/* ================ End Reset =============================================================== */
+
+.come-in {
+    transform: translateY(180px);
+    animation: come-in 1.3s ease forwards;
+    opacity: 0;
+}
+
+/* makes every other one roll in at a different rate. could be cool, but I'll leave it out for now */
+
+.come-in:nth-child(odd) {
+    animation-duration: 0.8s;
+}
+
+
+.already-visible {
+    transform: translateY(0);
+    opacity:1;
+    animation: none;
+}
+
+@keyframes come-in {
+    to { transform: translateY(0); }
+    to { opacity: 1; }
+}
+
+-webkit-@keyframes come-in{
+    to { transform: translateY(0); }
+    to { opacity: 1; }
+}
+
+
+html {
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    /*box-shadow:  inset 0 .5em 0 .5em white;
+        -webkit-box-shadow: 0 2px 30px -3px #000;
+            -moz-box-shadow: 0 2px 30px -3px #000;*/
+/*
+    border: .3em solid orange;
+*/
+    width: 100%;
+    z-index: 0;
+}
+
+body{
+    display: flex;
+        flex-direction: column;
+/*
+    border: .4em solid pink;
+*/
+    overflow: ;
+}
+
+
+h1{
+    font: normal 7em/100% 'Oswald', Arial;
+}
+
+h2{
+    font: normal 5em/100% 'Oswald', Arial;
+}
+
+h3{
+    font: bold 3.5em/100% 'Oswald', Arial;
+}
+
+h4 {
+    font: normal 2em/100% 'Oswald', Arial;
+}
+
+h5 {
+    font: normal 1.5em/100% 'Oswald', Arial;
+}
+
+h6 {
+    font: normal 1em/100% 'Oswald', Arial;
+}
+
+/* ========== START PARALLAX ==================================================================== */
+
+
+
+/* ============= NAVIGATION ===================== */
+
+
+#top-image-empty-wrapper {
+  /*
+    background: url("../images/beach-byJayCurtis.png") 70% 80% no-repeat fixed;
+    */
+    background: #7851A9 fixed;
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+/*
+    border: .4em solid orange;
+*/
+    height: 1000px;
+        position: relative;
+        top: 0;
+    margin: 0 ;
+    width: 100%;
+        background-size: cover;
+        -webkit-background-size: cover;
+            -moz-background-size: cover;
+                 -o-background-size: cover;
+                 z-index: 0;
+}
+
+
+/* okay, so my FOOTER was giving me fits, because this was originally sized to 55em in height, which
+    meant that it's parents (body and full-content-wrapper) were stopping at its size, instead of 
+    expanding for the rest of the content. */
+#top-image {
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+    height: 100%;
+}
+
+#top-image #main-image {
+
+    /* if 'fixed' makes it in there, then we've got a very basic parallax */
+    display: flex;
+    margin: 100px auto 40px auto;
+    width: 22em;
+    z-index: 1;            
+
+}
+
+#full-content-wrapper {
+/*
+    border: .5em solid green;
+*/
+    display: flex;
+    flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    width: 100%; /* vh makes sure that the full content is the height of the view screen - 
+                    mainly so that our footer will constantly scale with added content and
+                    consistently seat itself at the bottom of the page */
+}
+
+#top-content {
+    display: flex;
+/*
+    border: .3em solid purple;
+*/
+    overflow: auto;
+    width: 100%;
+}
+
+nav {
+    background: none;
+/*
+    border: .1em solid blue;
+*/
+/*
+    background-color: rgba(255,255,255,1);
+        -webkit-background-color: rgba(255,255,255,1);
+*/
+    position: fixed;
+        top: 0;
+        left: 0;
+        height: 4em;
+    width: 100%;
+    z-index: 9910;
+}
+
+.nav-container {
+/* 
+    border: .1em solid orange;
+*/   
+    position: relative;
+        width: 90%;
+    margin: auto auto;
+}
+
+.navigation-container {
+
+    background: url("../art/patterns/greek-vase/greek-vase.png") repeat center center fixed;
+/*
+    border: .1em solid green;
+*/
+
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+
+    box-shadow: 0 1em 1em -1em rgba(0,0,0,1);
+        -webkit-box-shadow: 0 1em 1em -1em rgba(0,0,0,1);
+            -moz-box-shadow:  0 1em 1em -1em rgba(0,0,0,1); 
+
+    border-radius: 0 0 1.5em 1.5em;
+    position:relative;
+        top: 0em;
+    margin: 0 auto;
+    height: 4em;
+    width: 60%; /* allows this thing to fit just fine on a laptop without much trouble 
+                    I imagine the same is true for a landscape tablet */
+        min-width: 57em;
+        max-width: 65em;
+}
+
+/*below, the brand-container and its anchor work together to create a cool hover effect of a scrolling background */
+.brand-container {
+    background: url("../art/patterns/greek-vase/greek-vase.png") repeat left center fixed;
+/*
+    border: .2em solid pink;
+*/
+    border-radius: 0 0 2.5em 2.5em; 
+    display: block;
+        margin: auto;
+    width: 10.5em;
+}
+
+/* this only appears once the screen drops to 850 px */
+.brand-container-toggle {
+    display: none;
+}
+
+.brand-container a {
+/*
+    border: .1em solid green;
+*/
+    border-radius: 0 0 .8em .8em;  
+    /* offseta-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0 .4em .3em -.4em rgba(0,0,0,1), 
+                    inset 0 0 0 .1em rgba(120, 81, 169, 0);
+        -webkit-box-shadow: 0 .4em .3em -.4em rgba(0,0,0,1), 
+                        inset 0 0 0 .1em rgba(120, 81, 169,0);
+            -moz-box-shadow:  0 .4em .3em -.4em rgba(0,0,0,1), 
+                            inset 0 0 0 .1em rgba(120, 81, 169,0); 
+                -o-box-shadow:  0 .4em .3em -.4em rgba(0,0,0,1), 
+                                inset 0 0 0 .1em rgba(120, 81, 169,0); 
+    display: block; 
+    margin: auto;
+    padding: 0 0 .2em 0;
+    position: relative;
+        top: 0em;
+        /*left: -.2em;  not sure what the f*ck is going on here ??????????????????????????????????? */
+                    /* I'm leaving this here so I can see the warning later -- this was here because of the negative
+                        margin I applied to the navigation list items. trying to get the anchors together caused a 
+                        fuss behind 'em. There must be a better way . ..  . . . */
+    text-align: center;
+    height: 2em;
+    width: 3.5em;
+    z-index: 9998;
+
+
+
+    -webkit-transition: background 300ms ease-in-out;
+        -moz-transition: background 300ms ease-in-out;
+            -o-transition: background 300ms ease-in-out;
+                transition: background 300ms ease-in-out;
+
+    text-shadow:.03em .03em 0 #7851A9, /* royal purple hex */
+                .05em .05em 0 #780116,
+                .08em .08em 0 #5C0029, 
+                .11em .11em 0 #ff0000,
+                .11em .11em .10em rgba(0,0,0,.8),
+                0 0 .05em rgba(0,0,0,.8);
+
+        /*
+                20px 20px 0px #017e7f, 
+                25px 25px 0px #052939, 
+                30px 30px 0px #c11a2b, 
+                35px 35px 0px #c11a2b, 
+                40px 40px 0px #c11a2b, 
+                45px 45px 0px #c11a2b;
+        */
+
+    
+}
+
+.brand-container a:hover {
+    background: url("../art/patterns/greek-vase/greek-vase.png") repeat left center fixed;
+    transition: background-position 500ms ease-out;
+            color: #7851A9;
+        text-shadow:
+                -1px -1px 0 #fff,  
+                1px -1px 0 #fff,
+                -1px 1px 0 #fff,
+                1px 1px 0 #fff,
+                .03em .03em 0 #7851A9, /* royal purple hex */
+                .05em .05em 0 #780116,
+                .08em .08em 0 #5C0029, 
+                .11em .11em 0 #ff0000,
+                .11em .11em .10em rgba(0,0,0,.8),
+                0 0 .05em rgba(0,0,0,.8);
+}
+
+
+.brand-container a:hover:after {
+/*   
+    border: 1px solid blue;
+*/
+    box-sizing: border-box;
+    content: ''; /* no content */
+    position: absolute;
+    left: 0;
+    top: -1em;
+        height: 1em;
+    width: 100%;
+}
+
+.brand-container a:active {
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    /* aha. needs to have BOTH box-shadows defined if we're going to transition 'em */
+       /* box-shadow: 0 .4em .3em -.4em rgba(0,0,0,1), inset 0 0 0 1em rgba( 120, 81, 169, .9);*/
+    box-shadow:  0 .09em .1em 0 rgba( 120, 81, 169, 1) ,  inset 0 0 0 0 rgba( 120, 81, 169, 0) ;
+    /*
+        -webkit-box-shadow:  0 .03em .1em 0 rgba(0,0,0,1) ;
+            -moz-box-shadow:  0 .03em .1em 0 rgba(0,0,0,1);
+                -o-box-shadow:  0 .03em .1em 0 rgba(0,0,0,1);
+    */
+    -webkit-transition: box-shadow 100ms ease-in-out;
+        -moz-transition: box-shadow 100ms ease-in-out;
+            -o-transition: box-shadow 100ms ease-in-out;
+                transition: box-shadow 100ms ease-in-out;
+
+    transform: translateY(.1em);
+}
+
+.navbar-brand{
+    background: none;
+/*  
+    border: .05em solid yellow;
+*/   
+        color: #fff;
+    font: italic normal 3em/100% 'Oleo Script', arial;
+    
+    margin: auto auto;
+    position: relative;
+        top: 0;
+        text-decoration: none;
+    height: 15em;
+    width: 22em;
+   /* width: 50%; === pretty cool, tucks the name away in a corner when it is sized down to mobile size -- keep it for the media adjustment to come */
+}
+
+.navbar-brand span{
+    font: italic normal 1.6em/50% 'Oleo Script', arial;
+    position: relative;
+        top: .22em;
+        right: .15em;
+}
+
+/*make sure the navbar toggle isn't called until the screen size is right */
+.navbar-toggle-container {
+    display: none;
+}
+
+.navigation {
+    /*
+    border: .1em solid pink;
+    */
+}
+
+.navigation li {
+/*
+    border:.1em solid green;
+*/
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    text-align: center;
+}
+
+.navigation a {
+    background: url("../art/patterns/greek-vase/greek-vase.png") repeat center  fixed;
+/*
+    border: .1em solid red;
+*/
+    color: #000;
+    display: inline-block;
+    font: normal 1em/100% 'Oswald', Arial;
+    letter-spacing: .05em;
+    padding: 3em 0 .5em 0;
+    width: 6em;
+    text-decoration: none;
+    -webkit-transition: all 200ms cubic-bezier(0.390, 0.800, 0.150, 1.300);
+        -moz-transition: all 200ms cubic-bezier(0.390, 0.800, 0.150, 1.300);
+            -ms-transition: all 200ms cubic-bezier(0.390, 0.800, 0.150, 1.300);
+                -o-transition: all 200ms cubic-bezier(0.390, 0.800, 0.150, 1.300);
+                    transition: all 200ms cubic-bezier(0.390, 0.800, 0.150, 1.300);
+} 
+
+/*make sure this doesn't display until the screen drops below 850px */
+.navigation-container-toggle {
+    display: none;
+}
+
+.navigation-container #left-nav{
+    border-radius: 0 0 0 1.5em;
+    display: block;
+    float: left;
+    position: relative;
+        top: -.7em;
+}
+
+.navigation-container #right-nav{
+    border-radius: 0 0 1.5em 0 ;
+    display: block;
+    float: right;
+    position: relative;
+        top: -7.2em;
+}
+
+.navbar-toggle-container{
+    display: none;
+}
+
+#dropdown-link-1, #dropdown-link-2 {
+/*
+    border: 1px solid pink;
+*/
+    position:relative;
+    padding: 3.1em 0 .4em 0;
+    top: -.1em;
+}
+
+/* adds chevron before the Loans and MoneyGram drop-down menu */
+#dropdown-link-1:before, #dropdown-link-2:before {
+ /*   
+    border: 1px solid pink;
+*/
+    content: "\f078  ";
+    display: inline-block; /* this is the cure for being able to rotate this sumbitch */
+    font-family: FontAwesome;
+    font-size: .8em;
+    position: relative;
+        top: -.3em;
+    transform: rotate(-90deg);
+    vertical-align: center;
+}
+
+#dropdown-link-1:hover, #dropdown-link-2:hover {
+        /*!!!!!!!!! interesting hover effect when the background image is still on below !!!!!!!!!!!*/
+    /*background: url("../art/patterns/greek-vase/greek-vase.png") repeat top fixed;*/
+
+    border-radius: 0 0 .5em .5em;
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0 1em .5em -.8em #000;
+        -webkit-box-shadow: 0 1em .5em -.8em #000;
+            -moz-box-shadow: 0 1em .5em -.8em #000;
+                -o-box-shadow: 0 1em .5em -.8em #000;
+    color: #7851A9;
+    transform: translateY(1em);
+        transition-duration: 300ms;
+            -webkit-transition-duration: 300ms;
+                -moz-transition-duration: 300ms;
+                    -ms-transition-duration: 300ms;
+                        -o-transition-duration: 300ms;
+}
+
+/* make sure that the link is still clickable even after movement */
+#dropdown-link-1:hover:after, #dropdown-link-2:hover:after {
+/*
+    border: 1px solid blue;
+*/
+    box-sizing: border-box;
+    content: ''; /* no content */
+    position: absolute;
+    left: 0;
+    top: -2em;
+        height: 2.5em;
+    width: 100%;
+}
+
+#dropdown-link-1.downChevron:before, #dropdown-link-2.downChevron:before { /* aha! okay, so when I'm choosing a class that is specifically tied to an ID, then it 
+                                        needs to be connected at the end of the ID */
+    content: "\f078  ";
+    display: inline-block;
+    font-family: FontAwesome;
+    font-size: .8em;
+    transform: rotate(0deg);
+        transition-duration: 300ms;
+            -webkit-transition-duration: 300ms;
+                -moz-transition-duration: 300ms;
+                    -ms-transition-duration: 300ms;
+                        -o-transition-duration: 300ms;
+}
+
+#dropdown-link-1.active, #dropdown-link-2.active {
+   /* background: url("../art/patterns/greek-vase/greek-vase.png") repeat center fixed;*/
+    transform: translateY(1em);
+        transition-duration: 0;
+            -webkit-transition-duration: 0;
+                -moz-transition-duration: 0;
+                    -ms-transition-duration: 0;
+                        -o-transition-duration: 0;
+                            color: #7851A9;
+
+}
+
+#faqs , 
+#our-story, 
+#rsvp, 
+#contact, 
+#registry {
+    /*
+    box-shadow: inset 0 0 0 .1em purple;
+    */
+}
+
+/* to make the links that AREN'T dropdown menus hover with the color */
+#faqs:hover, 
+/*#our-story:hover,*/
+#rsvp:hover, 
+#contact:hover, 
+#registry:hover {
+/*
+    border: .2em solid pink;
+*/
+color: #7851A9;
+    border-radius: 0 0 .5em .5em;
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0 1em .5em -.8em #000;
+        -webkit-box-shadow: 0 1em .5em -.8em #000;
+            -moz-box-shadow: 0 1em .5em -.8em #000;
+                -o-box-shadow: 0 1em .5em -.8em #000;
+    transform: translateY(1em);
+        transition-duration: 300ms;
+            -webkit-transition-duration: 300ms;
+                -moz-transition-duration: 300ms;
+                    -ms-transition-duration: 300ms;
+                        -o-transition-duration: 300ms;
+}
+
+#faqs:hover:after , 
+/*#our-story:hover:after,*/ 
+#rsvp:hover:after, 
+#contact:hover:after,
+#registry:hover:after {
+/*
+
+    background: url("../art/patterns/greek-vase/greek-vase.png") repeat center center fixed;
+*/
+/*
+    border: 1px solid blue;
+*/
+    box-sizing: border-box;
+    content: ''; /* no content */
+    position: absolute;
+    left: 0;
+    top: -2em;
+        height: 2.5em;
+    width: 100%;
+}
+
+#faqs:active , 
+/*#our-story:active, */
+#rsvp:active, 
+#contact:active,
+#regsitry:active {
+    /*
+    background: url("../art/patterns/greek-vase/greek-vase.png") fixed;
+    */
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0 1em .5em -.8em #000;
+        -webkit-box-shadow: 0 1em .5em -.8em #000;
+            -moz-box-shadow: 0 1em .5em -.8em #000;
+    color: #7851A9;
+    transform: translateY(1em);
+}
+
+#faqs.active , 
+/*#our-story.active, */
+#rsvp.active, 
+#contact.active, 
+#registry.active {
+    background: url("../art/patterns/greek-vase/greek-vase.png") repeat center center fixed;
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0 1em .5em -.8em #000;
+        -webkit-box-shadow: 0 1em .5em -.8em #000;
+            -moz-box-shadow: 0 1em .5em -.8em #000;
+    color: #7851A9;
+    transform: translateY(1em);
+}
+
+/* okay, this one was a bit tricky. on hovering the li which is subordinate to a ul which is subordinate to .navigation-container, then each of the 1st-level anchors (a) will change their background color. This makes it so that each of my top-level navigation links will change color and remain color-changed while their dropdown menus are displayed. phew! */
+/*
+.navigation-container ul li:hover > a {
+    background-color: #39b54b;
+}
+*/
+
+#left-nav #rsvp{
+    border-radius: 0 0 0 1.5em;
+}
+
+#right-nav #contact,
+#right-nav #registry{
+    border-radius: 0 0 1.5em 0 ;
+}
+
+/* hides the dropdown content until the on-hover event is triggered */
+.dropdown-content-1 , .dropdown-content-2 {
+    display: none;
+    opacity: 0;
+    position: absolute; /* positioned absolutely so it won't disrupt the flow */
+}
+
+
+/* styles the first dropdown content */
+.dropdown-content-1 ul , .dropdown-content-2 ul{
+    background-color: #91a6ba;
+    border-radius: 0 0 .6em .6em;
+   
+    /* Box Shadow action! */
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0 1em .8em -.8em #000;
+        -webkit-box-shadow: 0 1em .8em -.8em #000;
+            -moz-box-shadow: 0 1em .8em -.8em #000; 
+   
+    color: #000;
+    display: block;
+    float: none;
+    letter-spacing: .05em;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    width: 12em;
+}
+
+.dropdown-content-1 ul {
+    top: .8em;
+    left: -6em;
+}
+
+.dropdown-content-2 ul {
+    top: .8em;
+}
+
+.dropdown-content-1 ul li, .dropdown-content-2 ul li {
+    display: flex;
+        justify-content: center;
+    height: 2em;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.dropdown-content-1 ul li a, .dropdown-content-2 ul li a {
+    display: block;
+    font: .8em arial, sans-serif;
+    margin: 0;
+    padding: .7em 0 0 0;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+/* only select the li that are direct descendants of #dropdown-content ul -- and then only the last child therein*/
+#dropdown-content-1 ul > li:last-child, #dropdown-content-2 ul > li:last-child {
+    border-radius: 0 0 1em 1em;
+}
+
+.dropdown-content-1 a , .dropdown-content-2 a  {
+    background: url("../art/patterns/greek-vase/greek-vase.png") fixed;
+    background-color: rgba(120, 81, 169, 1);
+    color: black;
+}
+
+/* changes bground color on-hover for the links in the dropdown menu. */
+.dropdown-content-1 a:hover , .dropdown-content-2 a:hover  {
+    background: none;
+    background-color: rgba(120, 81, 169, 1);
+    color: white;
+}
+
+/* tagging this class onto the dropdown-content-1 or dropdown-content-2 will show (change the display to 'block' from 'none') the content */
+.show {
+    display: block; /*unfortunately, opacity leaves the object clickable */
+    opacity: 1;/*opacity can have keyframes of animation assigned. display(none) and visibility(hidden) cannot*/
+    transition: opacity 0.5s ease-in-out;
+        -webkit-transition: opacity 0.5s ease-in-out;
+            -moz-transition: opacity 0.5s ease-in-out;
+}
+
+/* makes the current dropdown menu list item (li) active while it is, ahem, the active list item */
+.active {
+}
+
+/* ======== END NAVIGATION ==========================================================================================*/
+/* ======== END NAVIGATION ==========================================================================================*/
+/* ======== END NAVIGATION ==========================================================================================*/
+/* ======== END NAVIGATION ==========================================================================================*/
+/* ======== END NAVIGATION ==========================================================================================*/
+
+
+/* ==========================================*/
+/* ============= begin BODY =======================*/
+/* ==========================================*/
+
+/* ======== BEGIN RSVP INTERACTION ======= */
+body .top {
+    position: absolute;
+        top: -150%; 
+    z-index: 100; 
+}
+
+body .top p{
+    opacity: 0;
+}
+
+body .moveDown{ /*javascript adds this class to the div and moves it left - with the transition making it look cool */
+    background: url("../art/patterns/greek-vase/greek-vase.png") repeat;
+    background-color: #fff;
+    box-shadow: inset 0 0 0 .1em rgba(0,0,0,.1);
+    overflow: hidden;
+    opacity: 1;
+    position: absolute;
+        height: 150%;
+        width: 100%;
+    transform: translateY(100%);
+        transition-duration: 300ms;
+            -webkit-transition-duration: 300ms;
+                -moz-transition-duration: 300ms;
+                    -ms-transition-duration: 300ms;
+                        -o-transition-duration: 300ms;
+                            transition-duration: 300ms;
+    z-index: 100;
+}
+
+body .moveDown p{
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+        -webkit-transition: opacity 0.5s ease-in-out;
+            -moz-transition: opacity 0.5s ease-in-out;
+}
+
+body .topCenter{
+    position: absolute;
+        top: -150%; 
+    z-index: 100; 
+}
+
+
+
+body .moveBackTop{
+        background-color: #fff;
+    box-shadow: inset 0 0 0 .1em rgba(0,0,0,.1);
+    overflow: hidden;
+    position: absolute;
+        height: 150%;
+        width: 100%;
+    transform: translateY(-100%);
+        transition-duration: 400ms;
+            -webkit-transition-duration: 400ms;
+                -moz-transition-duration: 400ms ;
+                    -ms-transition-duration: 400ms ;
+                        -o-transition-duration: 400ms;
+    z-index: 100;
+}
+
+body .top p, body .moveBackTop p{
+    color: #fff;
+    font: normal 2.5em/100% 'Oleo Script', Arial;
+      text-shadow: 
+            0 1px 0 #ccc, 
+            0 2px 0 #c9c9c9, 
+            0 3px 0 #bbb, 
+            0 4px 0 #b9b9b9, 
+            0 5px 0 #aaa, 
+            0 6px 1px rgba(0,0,0,.1), 
+            0 0 5px rgba(0,0,0,.1), 
+            0 1px 3px rgba(0,0,0,.3), 
+            0 3px 5px rgba(0,0,0,.2), 
+            0 5px 10px rgba(0,0,0,.25), 
+            0 10px 10px rgba(0,0,0,.2), 
+            0 20px 20px rgba(0,0,0,.15);
+    letter-spacing: .06em;
+    line-height: 110%;
+    margin: 0 .2em;
+}
+
+body #top-screen-p-div {
+    position: absolute;
+        top: 29em; 
+    margin: auto auto;
+    text-align: center;
+    transform: skewY(-10deg);
+    width: 100%;
+}
+
+body .top hr.rsvp-screen-line-1{
+    width: 100%;
+    height: .4em;
+    background-color: #ccc;
+    border: 0 none;
+}
+
+body .top hr.rsvp-screen-line-2{
+    width: 50%;
+    height: .2em;
+    background-color: #ccc; 
+    border: 0 none;
+}
+
+.rsvp-container {
+/*
+    border: .3em solid orange;
+*/
+
+    display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    margin: 0 auto 0 auto; /* this margin will have to be adjusted on screen re-sizing */
+    position: relative;
+        top: -6em;
+    text-transform: capitalize;
+    text-align: center;
+    z-index: 9901;
+}
+
+.rsvp-container a {
+/*
+    border: 1px solid pink;
+*/
+    display: none;
+    color: #000;
+    margin: auto;
+    text-decoration: none;
+}
+
+.rsvp-wedding-date-box{
+/*
+    border: .2em solid red;
+*/
+    display: none;
+        flex-direction: column;
+    margin: 3em auto 0 auto;
+    width: 38em;
+}
+
+.rsvp-wedding-date-box p.rsvp-wedding-date{
+    /* offset-x | offset-y | blur-radius | color */
+    text-shadow: .05em .05em 0 #fff, .02em .02em .5em #fff;
+    font: bold 1.5em/100% 'Oswald', Arial;
+    letter-spacing: .06em;
+    padding: 0 0 .5em 0;
+    text-transform: uppercase;
+}
+
+.rsvp-wedding-date-box p:before{
+}
+
+.rsvp-wedding-date-box p:after{
+}
+
+.rsvp-wedding-date-box a{
+    /* offset-x | offset-y | blur-radius | color */
+    text-shadow: .05em .03em 0 #fff, .03em .03em .5em #fff;
+    font: bold 2.5em/80% 'Oswald', Arial;
+    letter-spacing: .06em;
+    margin: 0 auto;
+    text-transform: uppercase;
+}
+
+.rsvp-wedding-date span{
+    font-size: .8em;
+    position: relative;
+}
+
+.rsvp-wedding-date-box a span{
+    font-size: .7em;
+    position: relative;
+    top: -.08em;
+}
+
+.rsvp-button {
+    font: bold 2em/100% 'Oswald', Arial;
+    margin: 1.5em auto;
+    /*
+    text-shadow: .05em .03em 0 #fff;
+    */
+    width: 8em;
+        z-index: 9902;
+
+}
+
+.rsvp-button a:hover:after {
+    content: '';
+/*
+    border: 1px solid pink;
+*/ 
+    position: absolute ;
+        top: 0;
+        left: 0;
+    height: 3.2em;
+    width: 8em;
+    display: block;
+    box-sizing: border-box;
+    z-index: 9902;
+}
+
+.rsvp-button a {
+    background-color: rgba(255,255,255,.1) ;
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: inset 0 0 0 .2em rgba(255,255,255,1);
+       -webkit-box-shadow: inset 0 0 0 .2em rgba(255,255,255,1);
+            -moz-box-shadow: inset 0 0 0 .2em rgba(255,255,255,1);
+    display: block;
+    letter-spacing: .1em;
+    padding: 1em .8em;
+}
+
+/* change the button radius to circular, push the button up a bit */
+.rsvp-button a:hover {
+   /* background-color: rgba(255,255,255,1); */
+    background-color: #7851a9 ;
+    border: 0em;
+    border-radius: 1.8em;
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: inset 0 0 0 0 rgba(255,255,255,0), 0 0 2em .15em rgba(120,81,169,0.8), 0 0.3em .3em 0 rgba(0,0,0,.7);
+    -webkit-box-shadow: inset 0 0 0 0 rgba(255,255,255,0), 0 0 2em .15em rgba(120,81,169,0.8), 0 0.3em .3em 0 rgba(0,0,0,.7);
+            -moz-box-shadow: inset 0 0 0 0 rgba(255,255,255,0), 0 0 2em .15em rgba(120,81,169,0.8), 0 0.3em .3em 0 rgba(0,0,0,.7);
+      /*  -webkit-box-shadow: inset 0 0 0 0 rgba(255,255,255,0), 0 .08em .1em 0 rgba(0,0,0,0.4), 0 0.8em .18em 0 rgba(0,0,0,0.16); =-===== this version was black without the purple haze around it
+            -moz-box-shadow: inset 0 0 0 0 rgba(255,255,255,0), 0 .08em .1em 0 rgba(0,0,0,0.4), 0 0.8em .18em 0 rgba(0,0,0,0.16); */
+    color: #fff;
+    letter-spacing: .15em;
+    text-shadow: 0 0 0 #fff;
+    transform: translateY(-.1em); /* moves it up just a scoche -- at .3em the scoche might have been too much. Dropped 'er down */
+    transition-duration: 600ms;
+        -webkit-transition-duration: 600ms;
+            -moz-transition-duration: 600ms ;
+                -ms-transition-duration: 600ms ;
+                    -o-transition-duration: 600ms;
+}
+
+
+.rsvp-button a:active{
+     box-shadow: inset 0 .08em .1em 0 rgba(0,0,0,0.4), inset 0 0.8em .18em 0 rgba(0,0,0,0.16);
+     transform: translateY(0em); /* moves it up just a scoche */
+        transition-duration: 0ms;
+}
+
+#content-wrapper-1 {
+}
+
+/* =============================================== */
+/* ============================================================================================================= */
+/* =========== Begin RSVP Page =================== */
+/* ===================================*/
+
+/* begin login page design */
+#login-wrapper {
+    background: url("../images/beach-byJayCurtis.png") no-repeat center center fixed;
+}
+
+#login-wrapper-image{
+    background-color: rgba(255,255,255, .8);
+}
+
+.rsvp-wrapper{
+
+        background: url("../art/patterns/xv/xv/xv.png") repeat  center; 
+/*
+background-color: #F5F5F5;
+*/
+/*
+    border: .2em solid red;
+*/
+    display: flex;
+    position: relative; /* position allows me to assign a value the height and width - which lets 
+                        me center the items inside it -- "fixed" will make this difficult to scroll over*/
+        /* top: -50em; -- useful if we are keeping the cover image, but I don't think we should */
+        width: 100%;
+    /*overflow: visible; /* mother of god - okay this needs to be set to overflow, 
+                        since, well, it is the direct parent of the items that are pushing the size */
+
+}
+
+
+.rsvp-box-main{
+    background: url("../art/patterns/greek-vase/greek-vase.png") repeat  center; 
+
+/*
+    border: 1px solid blue;
+*/
+        /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0 .7em .5em -.5em #000,
+                inset 0 0 0 .4em #7851A9;
+        -webkit-box-shadow: 0 .5em .8em -.8em #000,
+                inset 0 0 0 .4em #7851A9;
+            -moz-box-shadow: 0 .5em .8em -.8em #000,
+                inset 0 0 0 .4em #7851A9;
+    border-radius: .8em;
+    display: flex;
+        justify-content: center;
+    position: relative; /*okay, so long as this is relative to the container (rsvp-wrapper) then wrapper exands */
+        margin: 10em auto;
+        width: 90%;
+            max-width: 80em; /* make sure that box doesnt' get so large that finding the names and 
+                                their associated "select" box becomes impossible */
+    padding: 0 0 2em 0;
+}
+
+/*!!!!!!!!!!!!!!!!!!!!! apparently having this visible, and on the same z-index as the actual box, makes the form
+    text input impossible to access, as well as the submit button !!!!!!!!!!!!!!
+    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! essentially, the pseudo element is hovering in front of our form.
+    "after" doesn't seem to help. which is weird. */
+.rsvp-box-main:before { /*pseudo-element before the main box will let me add another border that sizes automagically*/
+    content: " ";
+    position: absolute;
+        top: -.8em;
+        right: -.8em;
+        bottom: -.8em;
+        left: -.8em;
+    box-shadow: .01em .01em 1em #000,
+                -.01em -.01em .1em  #000,
+                -.01em .01em .1em #000,
+                .01em -.01em .1em #000,
+                inset 0 0 0 .2em #000;
+                
+        -webkit-box-shadow: .01em .01em 1em #000,
+                    -.01em -.01em .1em  #000,
+                    -.01em .01em .1em #000,
+                    .01em -.01em .1em #000,
+                    inset 0 0 0 .2em #000;
+            -moz-box-shadow: .01em .01em 1em #000,
+                        -.01em -.01em .1em  #000,
+                        -.01em .01em .1em #000,
+                        .01em -.01em .1em #000,
+                        inset 0 0 0 .2em #000;
+                
+        border-radius: .8em;
+    pointer-events: none; /* holy mother flerking schnit! here it is! the VITAL code! keeps the pseudo element from cramping
+                            the form's style. sweet jaysus.
+                             https://stackoverflow.com/questions/49487145/link-not-clickable-because-before-and-after */
+}
+
+
+.rsvp-box-interior{
+/*    
+    border: .15em solid green;
+*/
+    display: flex;
+        justify-content: center;
+    border-radius: .4em;
+    height: auto;
+    margin: auto auto;
+    width: 98%;
+}
+
+.rsvp-box-interior-two{
+/*
+    border: .2em solid orange;
+*/
+    display: flex:
+        justify-content: center;
+        flex-direction: column;
+
+    height: auto;
+    width: 90%;
+        max-width: 70em;            
+}
+
+
+/* mother of god. had a box that was squeezing these images into shape essentially. 
+Don't. Do that. Don't. Just size the image itself, or take care to size both*/
+.rsvp-top-filigree-image,
+.rsvp-bottom-filigree-image { 
+    display: flex; 
+    position: relative; 
+    z-index: 0;
+}
+
+.rsvp-top-filigree-image{
+    display: flex;
+    margin:  -1.5em auto 2em auto;
+        max-width: 24em;
+        position: relative;
+}
+
+
+.rsvp-bottom-filigree-image{
+    display: flex;
+    margin:  1em auto 0 auto;
+   max-width: 24em;
+       -webkit-transform: scaleY(-1);
+        transform: scaleY(-1)
+}
+
+
+
+.rsvp-box-interior-two hr{
+    background-color: rgba(0,0,0,.5);
+    height: 2px;
+    margin: 0 auto .5em auto;
+    width: 80%;
+}
+
+.rsvp-box-interior-two h2, h3 {
+/* 
+   border: .1em solid yellow; 
+*/
+    display: block;
+    margin: .3em 0 .3em 0 ;
+    text-align: center;
+}
+
+.rsvp-box-interior-two input[type=text]{
+    background-color: #ccc;
+/*
+    border: .02em solid #7851a9;
+*/
+        border-radius: .5em;
+    box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box; 
+    color: #fff;
+    font: normal 2em/100% 'Oswald', Arial;
+    letter-spacing: .05em;
+    padding-left: 1em;
+        margin: .1em auto 1em auto;
+    width: 100%;
+}
+
+.rsvp-box-interior-two input[type=text]:focus{
+    background-color: #7851a9;
+}
+
+.form-box {
+/*
+    border: .1em solid pink;
+*/
+    display: block;
+    height: auto;
+}
+
+#search-form label {
+    display: block;
+    font: normal 1.5em/100% 'Oswald', Arial;
+    margin: .2em 0;
+}
+
+#attendee-results-box{
+    /*
+    display: .1em solid aqua;
+    */
+    height: auto;
+}
+
+#search-form input[type=button]{ /*changed to submit to allow for "enter" submission */
+    background: rgba(0,0,0,.05); 
+    border: .1em solid black;
+    cursor: pointer;
+    display: block;
+    border-radius: .2em; 
+        -webkit-border-radius: .2em;
+    font: bold 1.5em/100% 'Oswald', Arial, sans-serif;
+    padding: 1em 1.5em; 
+    width: 100%;
+}
+
+#search-form input[type=button]:hover {
+    background: rgba(0,0,0,.2); 
+}
+
+#search-form input[type=submit]{
+    background: rgba(0,0,0,.05); 
+    border: .1em solid black;
+    cursor: pointer;
+    display: flex;
+        justify-content: center;
+    border-radius: .2em; 
+        -webkit-border-radius: .2em;
+    font: bold 1.5em/100% 'Oswald', Arial, sans-serif;
+    margin: 0 auto;
+        padding: 1em 1.5em;
+    width: 100%;
+}
+
+#search-form input[type=submit]:hover {
+    background: rgba(0,0,0,.2); 
+}
+
+
+/* ===================================
+the results divs after AJAX are below 
+====================================*/
+
+#attendee-results-box { 
+/* 
+    border: .1em solid aqua; 
+*/ 
+    display: flex; 
+        flex-direction: column;
+        justify-content: center;
+    width:100%; 
+}
+
+#attendee-results-box hr {
+    width: 90%;
+    height: 3px;
+    margin: auto;
+    background-color:#ccc;
+    border: 0 none;
+}
+
+#attendee-results-box input[type=submit]{
+    background: rgba(0,0,0,.05); 
+    border: .1em solid black;
+    cursor: pointer;
+    display: flex;
+        flex-direction:row;
+        align-content: center;
+    border-radius: .2em; 
+        -webkit-border-radius: .2em;
+    font: bold 1.5em/100% 'Oswald', Arial, sans-serif;
+    padding: 1em 1.5em; 
+}
+
+#attendee-results-box input[type=submit]:hover{
+    background: rgba(0,0,0,.2);  
+}
+
+
+
+.results-wrapper {
+    
+    /*
+    border: .2em solid pink;
+    */
+    display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    width: 90%;
+    max-width: 80em;
+    margin: 0 auto;
+    padding: 1em 0 2em 0;
+}
+
+.name-results-box {
+    /*
+    border: .1em solid gray;
+    */
+    display: flex;
+        flex-direction: column;
+    margin: 0 0 0 10%;
+}
+
+.name-results-box p{
+    font: bold 1.4em/100% 'Oswald', Arial, sans-serif;
+    letter-spacing: .06em;
+    line-height: 1.4em;
+}
+
+.results-form-box {
+    /*
+    border: .1em solid orange;
+    */
+    display: flex;
+    padding: 1em;
+    margin: 0 10% 0 0;
+}
+
+#interior-form-box {
+    margin:auto auto;
+}
+
+
+
+/*
+    background: none!important;
+    border: .2 solid black;
+    color: blue;
+    cursor: pointer;
+    display: block;
+    letter-spacing: .1em;
+    font: bold 1.5em/100% 'Oswald', Arial, sans-serif;
+        /*input has OS specific font-family*/
+/*    padding: 0!important; */
+        /*optional*/
+/*    text-decoration: underline;
+*/
+
+/* =======================================================================================================================================*/
+/* ==========END RSVP PAGE ===============================================================================*/
+/* =======================================================================================================================================*/
+
+
+/* ====================================================================================================================================*/
+/* =========BEGIN ATTENDEE RSVP PAGE ========================================================
+=============================================================================*/
+#rsvp-form #attendee-rsvp-wrapper{
+/*  
+    border: .4em solid pink;
+*/   
+    display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-content: center;
+    width: 100%;
+        
+}
+
+#rsvp-form #attendee-rsvp-interior{
+/*
+    border: .4em solid orange;
+*/
+    display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-content: center;
+    width: 100%;
+}
+
+#rsvp-form #attendee-rsvp-wedding-info{
+/*
+   border: .2em solid green;
+*/
+    display: flex;
+        flex-direction: column;
+    margin: auto 0;
+    padding: 2em 2em;
+    text-align: center;
+}
+
+#rsvp-form #attendee-rsvp-wedding-info hr{
+    width: 90%;
+    height: .2em;
+}
+
+#rsvp-form #attendee-rsvp-wedding-info h3{
+    font: bold 4em/100% 'Sacramento', Arial;
+    margin:0;
+}
+
+#rsvp-form #attendee-rsvp-wedding-info h5{
+    font: bold 1.5em/100% 'Lora', serif;
+    margin:0;
+}
+
+#rsvp-form #attendee-rsvp-wedding-info a{
+
+    text-decoration: none;
+}
+
+#rsvp-form #attendee-rsvp-accept-decline-box{
+/*
+    border: 1em solid yellow;
+*/
+    display: flex;
+        flex-direction: column;
+}
+
+#rsvp-form #attendee-rsvp-accept-decline-box h4{
+/*
+    border: 2px solid red;
+*/ 
+    display: flex;
+        flex-direction: column;
+    margin: 0 0 .2em 0;
+    text-align: center;
+}
+
+
+#rsvp-form #attendee-rsvp-accept-decline-box h6{
+/*
+    border: 2px solid orange;
+*/
+    display: flex;
+        flex-direction: column;
+    margin: .8em 0 .2em 1.8em;
+}
+
+.attendee-rsvp-group {
+/*
+    border: .3em solid green;
+*/
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+}
+
+.attendee-rsvp-group hr{
+    width: 80%;
+    height: 3px;
+    background-color: #cbcbcb;
+}
+
+#rsvp-form #attendee-rsvp-accept-decline-box {
+    display: flex;
+    flex-direction: column;
+        justify-content: center;
+/*
+    border: 3px solid aqua;
+*/
+}
+
+#rsvp-form #attendee-rsvp-accept-decline-box ul{
+/*
+    border: .3em solid blue;
+*/
+    display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+}
+
+#rsvp-form #attendee-rsvp-accept-decline-box li{
+/*   
+    border: .1em solid pink;
+*/   
+    border-radius: .5em;
+    display: inline-flex;
+        flex: 1;
+    margin: auto;
+}
+
+#rsvp-form input[type=button]{
+    background: rgba(0,0,0,.08);
+/*
+    border: .1em solid orange;
+*/
+
+    box-shadow: .1em .1em .1em -.05em #7851A9,
+                -.1em .1em .1em 0 #7851A9;
+        -webkit-box-shadow: .1em .1em .1em -.05em #7851A9,
+                    -.1em .1em .1em 0 #7851A9;
+            -moz-box-shadow: .1em .1em .1em -.05em #7851A9,
+                        -.1em .1em .1em 0 #7851A9;
+    cursor: pointer;
+    display: flex;
+        flex-direction: row;
+        justify-content: center;
+    border-radius: .4em; 
+        -webkit-border-radius: .4em;
+    font: normal .8em/100% 'Oswald', Arial, sans-serif;
+        height: 3em;
+        width: 9em;
+    margin: .2em .2em;
+}
+
+#rsvp-form input[type=button]:active{
+    background-color: #7851a9;
+    box-shadow: inset 0 .5em .6em .06em rgba(0,0,0,1);
+    color: #fff; 
+        height: 3em;
+        width: 9em;
+    position: relative;
+    transform: translateY(.08em);
+        transition-duration: 0ms;    
+}
+
+/* the message textarea ******************************************/
+/* ***************************************************************/
+#complete-rsvp-textarea-wrapper h5{
+    font: normal 1.2em/110% 'Montesrrat', Arial, sans-serif;
+}
+
+#rsvp-form #complete-rsvp-textarea-wrapper {
+/*
+    border: 2px solid red;
+*/
+    display: flex;
+        flex-direction: column;
+    font: normal 1.1em/120% 'Raleway', Arial, sans-serif;
+    margin: 0 auto;
+    max-width: 70%;
+}
+
+.rsvp-message-label{
+    display: flex;
+    width: 100%;
+}
+
+#complete-rsvp-textarea-wrapper .small-textarea{
+/*
+    border: 2px solid red;
+*/
+    border-radius: 5px;
+    display: block;
+    font: normal 1.1em/100% 'Raleway', Arial, sans-serif;
+    height: 70px;
+    margin: 0 auto;
+    padding:.5em;
+    /* width is required to fill out the parent div*?
+    /* max-width is required to make sure it doesn't expand
+        past parent div */
+    width: 100%;
+    max-width: 100%;
+}
+
+/* ************************************/
+/* LOGIN FORM STUFF *****************************************************************************/
+/* ************************************/
+
+.rsvp-box-interior-two h2{
+    color: #000;
+/*
+    color: #7851A9;
+*/
+    font: normal 12em/90% 'Great Vibes', Arial, sans-serif;
+    transform: skewY(-10deg);
+    margin: -25px 0 -20px auto;
+    z-index: 100;
+}
+
+#login-form {
+    text-align: center;
+}
+
+#login-form h4{
+
+    font: normal 1.2em/100% 'Raleway', Arial, sans-serif;
+}
+
+#login-form input[type="password"]{
+    border-radius: 10px;
+    height: 25px;
+    width: 300px;
+}
+
+#login-form input[type="password"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  padding-left: 10px;
+}
+
+#login-form input[type="password"]::-moz-placeholder { /* Firefox 19+ */
+  padding-left: 10px;
+}
+
+#login-form input[type="password"]:-ms-input-placeholder { /* IE 10+ */
+  padding-left: 10px;
+}
+
+#login-form input[type="password"]:-moz-placeholder { /* Firefox 18- */
+  padding-left: 10px;
+}
+
+/* END login form *******************/
+/* **********************************************************************************************/
+
+.plus-one-wrapper {
+/*
+    border: 2px solid red;
+*/
+    display: flex;
+        flex-direction: column;
+    max-width: 30em;
+    margin: 0 auto 0 auto;
+}
+
+
+.plus-one-wrapper p{
+    display: flex;
+    font: normal .9em/110% 'Montserrat', Arial;
+    padding: 0 2em .5em 2em;
+}
+
+.plus-one-wrapper p:first-child {
+    font: bold 1em/110% 'Montserrat', Arial;
+    padding: 0 2em .7em 1.8em;
+}
+
+.plus-one-wrapper label{
+/*
+    border: 2px solid pink;
+*/
+    font: bold 1em/110% 'Lora', Arial;
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+    letter-spacing: .02em;
+    margin: .5em 0 0 1.6em;
+    width: 15%;
+}
+
+.plus-one-wrapper input[type=checkbox] {
+    display: flex;
+    height: 1.7em;
+    width: 1.7em;
+}
+
+.plus-one-wrapper ._1,
+.plus-one-wrapper ._2,
+.plus-one-wrapper ._3,
+.plus-one-wrapper ._4,
+.plus-one-wrapper ._5,
+.plus-one-wrapper ._6,
+.plus-one-wrapper ._7,
+.plus-one-wrapper ._8,
+.plus-one-wrapper ._9,
+.plus-one-wrapper ._10 {
+    display: flex;
+        flex-direction: column;
+/*
+    border: 3px solid orange;
+*/
+}
+
+.plus-one-wrapper p.plus-one-name {
+    font: normal 1.4em/100% 'Oswald', Arial, sans-serif;
+    letter-spacing: 0;
+    margin: 0 auto;
+    padding: 0;
+    text-transform: capitalize;
+}
+
+.plus-one-wrapper input[type=text] {
+    display: flex;
+    background-color: #CBCBCB;
+        border-radius: .4em;
+    box-shadow: inset 0 0 0 .05em #CBCBCB;
+    color: #FFF;
+    font: normal 1.5em/100% 'Oswald', Arial;
+    letter-spacing: .05em;
+    padding-left: 1em;
+    margin: 0 0 .5em 1em;;
+    width: 12em;
+    height: 1.8em;
+}
+
+#rsvp-form label.rsvp-choice-label {
+    border-radius: .5em;
+        -webkit-border-radius: .5em;
+    display: flex;
+        flex-direction: row;
+    font: normal 1.5em/100% 'Oswald', Arial;
+}
+
+#rsvp-form input[type=submit]{
+    background: rgba(120, 81, 169, 1); 
+/*
+    border: .1em solid cyan; 
+*/ /*change to #000*/
+    color: #FFF;
+    border-radius: .5em; 
+        -webkit-border-radius: .4em;
+    cursor: pointer;
+    display: flex;
+        justify-content: center;
+    font: normal 2em/100% 'Oswald', Arial, sans-serif;
+    padding: .5em 1.5em; 
+    margin: 2em auto 0 auto;
+    width: 80%;
+}
+
+#rsvp-form input[type=submit]:active{
+    /* offset-x | offset-y | blur-radius | spread-radius | color */ 
+    box-shadow: inset .1em .1em .3em .06em rgba(0,0,0,1);
+        -webkit-box-shadow: inset .1em .1em .3em .06em rgba(0,0,0,1);
+            -moz-box-shadow: inset .1em .1em .3em .06em rgba(0,0,0,1);
+}
+
+#rsvp-form .button.activate {
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: inset .1em .2em .4em .02em rgba(0,0,0,0.8);
+        -webkit-box-shadow: inset .1em .2em .4em .02em rgba(0,0,0,0.8);
+            -moz-box-shadow: inset .1em .2em .4em .02em rgba(0,0,0,0.8);
+    background-color: #7851a9;
+    color: #fff;
+    transform: translateY(.06em); /* moves it down just a scoche */
+        transition-duration: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+/* to provide form validation direction - encircles the inputs with red */
+.check {
+    box-shadow: inset 0 0 0 .3em rgba(255,0,0,1);
+}
+
+/* ========================================*/
+/* =================================================================================================================================== */
+/* ========== RSVP COMPLETED PAGE ======================================================================================================== */
+.attendee-rsvp-complete-form-box{
+    display: flex;
+        flex-direction: column;
+}
+
+
+.attendee-rsvp-complete-form-box {
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+}
+
+.attendee-rsvp-complete-form-box h3{
+    font-size: 2.5em;
+    font-weight: normal;
+}
+
+.attendee-rsvp-complete-form-box h4{
+    color: #7851A9;
+        display: flex;
+            flex-direction: column;
+    text-align: center;
+    margin: .4em 0 .2em 0;
+}
+
+
+.attendee-rsvp-complete-form-box h5{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#rsvp-complete-form { /*contains edit button that must be at the bottom */
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+}
+
+#attendee-rsvp-complete-wrapper {
+/*  
+    border: .4em solid pink;
+*/   
+    display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-content: center;
+    width: 100%;
+}
+
+#attendee-rsvp-complete-interior {
+/*
+    border: .4em solid orange;
+*/
+    display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+    width: 100%;
+}
+
+
+#rsvp-complete-form #attendee-rsvp-complete-wedding-info{
+/*
+   border: .2em solid green;
+*/
+    display: flex;
+        flex-direction: column;
+    margin: auto auto;
+    padding: 2em 2em;
+    text-align: center;
+}
+
+#rsvp-complete-form #attendee-rsvp-complete-wedding-info hr{
+    width: 90%;
+    height: 3px;
+}
+
+#rsvp-complete-form #attendee-rsvp-complete-wedding-info h3{
+    font: bold 4em/100% 'Sacramento', Arial;
+    margin:0;
+}
+
+#rsvp-complete-form #attendee-rsvp-complete-wedding-info h5{
+    font: bold 1.5em/100% 'Lora', serif;
+    margin:0;
+}
+
+#rsvp-complete-form #attendee-rsvp-complete-wedding-info a{
+    text-decoration: none;
+}
+
+#rsvp-complete-form #attendee-rsvp-complete-box {
+    display: flex;
+    flex-direction: column;
+        justify-content: center;
+/*
+    border: 3px solid aqua;
+*/
+}
+
+#rsvp-complete-form #attendee-rsvp-complete-box ul{
+/*
+    border: .3em solid blue;
+*/
+    display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+}
+
+#rsvp-complete-form #attendee-rsvp-complete-box li{
+/*   
+    border: .1em solid pink;
+*/   
+    border-radius: .5em;
+    display: inline-flex;
+        flex: 1;
+    margin: auto;
+}
+
+
+
+#rsvp-complete-form #attendee-rsvp-complete-box {
+    /*
+    border: .1em solid green; 
+    */
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+    margin: auto auto;
+}
+
+#rsvp-complete-form #attendee-rsvp-complete-box ul{
+    display: flex;
+        flex-direction: column;
+    margin: 0 0 1em 0 ;
+    text-align: center;
+}
+
+#rsvp-complete-form #attendee-rsvp-complete-box ul li ul:nth-child(2) { /* this is for the plus one addition */
+        font: bold 1.5em/110% 'Montserrat', Arial;
+}
+
+.plus-one  {
+    font: normal 1.2em/80% 'Oswald', Arial, sans-serif;
+    margin: 0 0 .5em 0;
+    position: relative;
+        top: -.5em;
+        left: .5em;
+    text-transform: capitalize;
+}
+
+.plus-one span {
+    font: normal 1.5em/80% 'Oswald', Arial, sans-serif;
+    position: relative;
+        top: .3em;
+}
+
+
+#rsvp-complete-form input[type=submit]{
+
+    background: rgba(0,0,0,.05); 
+    border: .1em solid black;
+    border-radius: .4em; 
+        -webkit-border-radius: .4em;
+    cursor: pointer;
+    display: block;
+    font: normal 2em/100% 'Oswald', Arial, sans-serif;
+    padding: .5em 1.5em; 
+    margin: auto;
+    width: 80%;
+}
+
+#rsvp-complete-form label {
+/*
+    border: .1em solid blue;
+*/
+}
+
+#rsvp-complete-form input[type=submit]:hover{
+    background-color: #7851A9;
+    color: #FFF;
+}
+
+
+#rsvp-complete-form input[type=submit]:active{
+    /* offset-x | offset-y | blur-radius | spread-radius | color */ 
+    box-shadow: inset 0 .5em .6em .06em rgba(0,0,0,1);
+    background: rgba(120,81,169,.5); 
+}
+
+
+/* ============== end rsvp =========================================================================*/
+
+
+/* =============== BEGIN  SECTION STYLING for COLUMN-style SECTIONS =============== */
+/* ==============================================================================*/
+/* ============================================================================== */
+
+#about-us-content-wrapper::before {
+/*
+    border: 2px solid red;
+*/
+    display: inline-flex; 
+    content: " "; 
+    margin-top: -200px; /* moves the before item way up the page */
+    height: 200px;  /* make surre that the before item fills the entre margin *;/
+    visibility: hidden; /* we don't want to see the before element */
+    pointer-events: none; /* can't click on it, and the mouse wont' show it exists */
+    width: 100%;
+}
+
+.full-section-wrapper{
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+    position: relative;
+}
+
+.section-wrapper {
+        background: url("../art/patterns/xv/xv/xv.png") repeat center;
+/*background:  #F5F5F5; -- white smoke --*/ /* #BFAFA6-- bone fixed;  #F7EDE2 OFF-WHITEISH */
+/*
+    border: 1px solid blue;
+*/
+    display: flex;
+    align-content: space-between;
+        justify-content: space-between;
+        flex-direction: column;
+        /*without height, then the column expandes to contain everything inside */
+    width: 100%;
+}
+
+.section-interior-wrapper{
+/*
+    border: 1px solid orange;
+*/
+    order: 0;
+    display: flex;
+        align-content: space-between;
+        justify-content: center;
+        flex-direction: column;
+    margin: auto;
+    padding: 0 0 3em 0;
+    width: 100%;
+}
+
+
+.content-interior-header{
+    background-color: #7851A9;
+    /*
+    box-shadow: 0 -.2em 0 0 #cbcbcb;
+    */
+    display: flex;
+        align-content: center;
+        flex-direction: column;
+        justify-content: center;
+    height: 4em;
+    margin: 1em 0 0 0  ;
+    overflow: hidden;
+    position: relative;
+        top: -1.8em;
+    text-align: center;
+    width: 100%;
+}
+
+.top-header{
+
+    box-shadow: 0 -.2em 0 0 #cbcbcb;
+}
+
+.content-interior-header h4{
+/*
+    border: .1em solid #f5f5f5;
+*/
+    color: white;
+    display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    font: normal 2.4em/100% 'Lobster', Arial;
+    margin: 0 auto 0 auto;
+}
+
+.section-separator-image-left{
+/* 
+    border: .2em solid black;
+*/
+    display: flex; 
+        flex-direction: column;
+        justify-content: center;
+    position: relative; 
+        left: -4em;
+}
+
+.section-separator-image-left img{
+    display: none;
+        max-height: 5.5em;
+            transform: rotate(-135deg);
+}
+
+.section-separator-image-right{ 
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+    position: relative; 
+        right: -4em;
+}
+
+.section-separator-image-right img{
+    display: none;
+        max-height: 5.5em;
+                    transform: rotate(-45deg);
+}
+
+
+.interior-article-wrapper {
+    background: #FEFEFA;/* #FEFEFA -- slight off- WHITE; */
+/*
+    border: .1em solid #7851A9;
+*/
+    border-radius: 15px;
+        /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0 .7em .5em -.5em #000;
+        -webkit-box-shadow: 0 .5em .8em -.8em #000;
+            -moz-box-shadow: 0 .5em .8em -.8em #000;
+    display: flex;
+        flex-direction: column;
+    width: 90%;
+    max-width: 70em;
+    margin: auto;
+}
+
+.interior-article-wrapper h5{
+/*
+    border: 2px solid orange;
+*/
+    color: #000;
+    display: flex;
+    font: normal 2.2em/100% 'Sacramento', Arial;
+    margin: 1em auto .5em auto;
+    position: relative;
+        top: 0;
+}
+
+#our-story-header {
+/*
+    border: 2px solid orange;
+*/
+    color: #000;
+    display: flex;
+    font: normal 2.2em/100% 'Sacramento', Arial;
+    margin: 1em auto -1em auto;
+    position: relative;
+}
+
+
+
+.interior-image-wrapper {
+    border-radius: .8em;
+        height: 20em;
+        min-height: 13em; /*makes sure it doesnt' fold under the pressure from the div below */
+        width: 20em;
+/*
+    border: .25em solid #7851A9;
+*/
+    display: flex;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+        top: -1.5em;
+        left: 0;
+}
+
+
+
+#our-story-main-image img { /* for static image */
+    display: flex;
+        flex-direction: column;
+    position: relative;
+    width: 20em;
+/*
+        transform: rotate(-45deg);
+*/
+}
+
+#about-us-main-image-wrapper { /* so long as this div has a width, then it will force all
+                                    the interior divs to fall in line
+                                    And with a height of 100% it allows the pictures to
+                                    resize automagically */
+/*
+    border: .2em solid aqua;
+*/
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: flex-start;
+        /*justify-content: flex-start; - nope, this DOES make sure the images stay at the top
+         but everything still moves because, well, the images resize, ya dig? */
+    min-height: 500px; /* uh yeah, why the f*ck wasn't I using pix as exact measure before? */
+    max-width: 20em;
+}
+
+#our-photos-slider-wrapper {
+/* this seems to be required in order to make the interior images 
+ that is, this can't have a defined display style. whether it is block
+ (which the div already is, so maybe the double-up confuses safari?) or
+ flex. only NO defined display will allow the interior images to
+ behave correctly */
+
+    height: 100%;
+    width: 100%;
+}
+
+.slide-images{ /*for image slideshow -- used to be #about-us-main-image-wrapper img */
+    border-radius: .8em;
+    display: none;
+    position: relative;
+    max-width: 20em;
+    margin: 0 auto;
+    z-index: 0;
+/*
+    border: .2em solid purple;
+*/
+/*
+        transform: rotate(-45deg);
+*/
+}
+
+.img-dots-div {
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+    position: relative;
+        top: -1em;
+    width: 100%;
+}
+
+span.img-dot {
+    background-color: #ccc;
+    display: inline-flex;
+        justify-content: center;
+        margin: 0 .35em;
+    position: relative;
+    width: 1em;
+    height: 1em;
+    border-radius: 1em;
+    cursor: pointer;
+}
+
+span.dot-outside:before {
+    content:" ";
+    position: absolute;
+        top: -4px;
+        bottom: -4px;
+        right: -2px;
+        left: -4px;
+    border-radius: 1.2em;
+    box-shadow: 0 0 0 1px #7851A9;
+    width: 1.5em;
+}
+
+/* ==================================================================*/
+/* begin main photos slide system ====================================*/
+/* ==================================================================*/
+
+#about-us-main-image-wrapper .exterior-image-slider-wrapper {
+/*
+    border: 2px solid orange;
+*/
+    margin: 0 auto;
+    width: 100%;
+}
+
+#about-us-main-image-wrapper .exterior-image-slider-wrapper button{
+    position: absolute;
+    transition: 0.4s ease-in-out;
+    text-shadow: 1px 1px 3px rgba(0,0,0,.9);
+}
+
+#about-us-main-image-wrapper .exterior-image-slider-wrapper button:hover{
+    background-color: rgba(0,0,0,.8);    
+    text-shadow: 0 0 0 rgba(0,0,0,0);
+}
+
+#about-us-main-image-wrapper .exterior-image-slider-wrapper button:active{
+}
+
+#about-us-main-image-wrapper .slide-move-left {
+    left: 0;
+}
+
+#about-us-main-image-wrapper .slide-move-right {
+    right: 0;
+}
+
+.section-article-text {
+/*
+    border: 1px solid blue;
+*/
+    height: 80%;
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: stretch;
+}
+
+.section-article-text p{
+/*
+    border: 1px solid orange;
+*/
+
+/*  display: flex; ==!!!!!!!!!!!!!!!!!!!!!!!!!!! assigning a <p> element the flex property
+  ==================!!!!!!!!!!!!!! really mucks things up !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  ===================!!!!!!!!!!!!!!!!!!!!! don't do it !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! =====
+  ============!!!!!!!!! the <p> element already displays as block
+  =============!!!!!! so leave it alone. If you want a link to nest nicely, and inline in the <p> element
+  =====!!!!!!!!!a then do NOT make the <p> element into a block or inline block or flex or inline flex 
+  ====!!!! or really, anything other than what it is already ================!!!!!!!!!*/
+    font: normal .8em/180% 'Montserrat', Arial;
+    margin: 2em 0 0 0 ;
+    padding: 2em 2em;
+    position: relative;
+    word-wrap: wrap;
+}
+
+.bold-article-text{
+    font-weight: bold;
+}
+
+.section-article-text .interior-link a{
+/*
+    border: 2px solid blue;
+*/
+    display: inline-flex;
+    text-decoration: none;
+}
+
+.interior-article-wrapper .interior-link a,
+.interior-article-wrapper-nested .interior-link a {
+    color: #7851A9;
+    font-weight: normal;
+    text-decoration: underline;
+}
+
+.interior-article-wrapper .interior-link a:visited,
+.interior-article-wrapper-nested .interior-link a:visited {
+    color:  #7851A9;
+    font-weight: normal;
+    text-decoration: underline;
+}
+
+.interior-article-wrapper .interior-link a:hover,
+.interior-article-wrapper-nested .interior-link a:hover {
+    color: #68BCA5;
+}
+
+.interior-article-wrapper .interior-link a:focus,
+.interior-article-wrapper-nested .interior-link a:focus {
+    color: #68BCA5;
+}
+
+
+
+.section-article-text span.drop-cap,
+.inline-section-article-text span.drop-cap{
+    display: block;
+    float: left;
+    font: bold 3.5em/20% 'Montserrat', Arial;
+    letter-spacing: .1em; /*works better than width for spacing purposes */
+    position: relative; 
+    height: .6em;
+    top: .4em;
+}
+
+
+/* ==============================================================================*/
+/* =============== BEGIN  SECTION STYLING for IN=Line-style SECTIONS =============== */
+/* ==============================================================================*/
+/* INLINE SECTION INLINE SECTINON INLINE INLINE INLINE INLINE IN LINE */
+
+.section-wrapper-inline-content {
+          background: url("../art/patterns/xv/xv/xv.png") repeat center;
+/*  background:  #F5F5F5; -- white smoke --*/ /* #BFAFA6-- bone fixed;  #F7EDE2 OFF-WHITEISH */
+/*
+    border: .5em solid blue;
+*/
+background-blend-mode: lighten;
+    display: flex;
+        /*
+        justify-content: space-between;
+        */
+        justify-content: center;
+        flex-direction: column; /* everything in here will be in a column, the further interior is a row */
+        align-content: center;
+    width: 100%;
+}
+
+.section-interior-wrapper-inline-content{
+/*
+    border: .2em solid green;
+*/
+    display: flex;
+    /*
+        align-content: space-between;
+    */
+    align-content: center;
+        justify-content: center;
+        flex-direction: column;
+    margin: auto;
+    padding: 0 0 3em 0;
+    width: 100%;
+}
+
+.section-content-interior-wrapper{
+/*
+    border: .2em solid orange;
+*/
+    order: 0;
+    display: flex;
+        justify-content: center;
+        flex-direction: row;
+    margin: auto;
+    padding: 0 0 3em 0;
+    width: 100%;
+}
+
+.interior-article-wrapper.inline {
+    background: #FEFEFA;/* #FEFEFA -- slight off- WHITE; */
+/*
+    border: .1em solid #7851A9;
+*/ /* royal purple */
+
+    border-radius: .8em;
+        /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0 .7em .5em -.5em #000;
+        -webkit-box-shadow: 0 .5em .8em -.8em #000;
+            -moz-box-shadow: 0 .5em .8em -.8em #000;
+    display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    margin: auto 0;
+    width: 55%;
+}
+
+.interior-article-wrapper.inline.short{
+/*
+border: .3em solid purple;
+*/
+    display: flex;
+        flex-direction: column;
+        flex-shrink: 1.5;
+        justify-content: start;
+        height: 100%;
+}
+
+
+
+.interior-article-wrapper.inline h5{
+/*
+    border: 2px solid orange;
+*/
+    color: #000;
+    display: flex;
+    font: normal 2.2em/100% 'Sacramento', Arial;
+    margin: 1em auto .5em auto;
+    position: relative;
+        top: 0;
+}
+
+.interior-article-wrapper.inline h6{
+/*
+    border: 2px solid pink;
+*/
+    color: #7851A9;
+    display: flex;
+    font: normal 1.5em/100% 'Oswald', Arial;
+    margin: 1em auto 0 auto;
+}
+
+
+.interior-article-wrapper.inline .main-interior-link-centered{
+    display: flex;
+    margin: auto;
+}
+
+.interior-article-wrapper.inline .main-interior-link-centered:hover{
+    color: #7851A9;
+    /*
+    text-shadow: .04em .04em 0 purple, 
+                -.04em -.04em 0 purple,
+                -.04em .04em 0 purple,
+                .04em -.04em 0 purple; *//* no spread so that it is a tight outline */
+
+}
+
+.interior-article-wrapper.inline:first-child {
+    background: #FEFEFA;/* #FEFEFA -- slight off- WHITE; */
+/*
+    border: .1em solid #7851A9;
+*/
+    border-radius: .8em;
+        /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0 .7em .5em -.5em #000;
+        -webkit-box-shadow: 0 .5em .8em -.8em #000;
+            -moz-box-shadow: 0 .5em .8em -.8em #000;
+    display: flex;
+    margin: 0 2.5% 0 5%;
+    width: 90%;
+        max-width: 35em;
+}
+
+.interior-article-wrapper.inline:last-child {
+    background: #FEFEFA;/* #FEFEFA -- slight off- WHITE; */
+/*
+    border: .1em solid #7851A9;
+*/
+    border-radius: .8em;
+        /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0 .7em .5em -.5em #000;
+        -webkit-box-shadow: 0 .5em .8em -.8em #000;
+            -moz-box-shadow: 0 .5em .8em -.8em #000;
+    display: flex;
+    margin: 0 5% 0 .2em; /*  if the left and right margin are set to anything but auto then, 
+                                of course, the content will NOT center //  0 auto 0 auto */
+    width: 90%;
+        max-width: 50em;
+}
+
+
+#the-venue-main-text {
+    display: flex;
+        flex-direction: column;
+}
+
+#the-venue-main-text p, #the-schedule-main-text p{
+/*
+    border: 1px solid orange;
+*/
+    font: normal .8em/180% 'Montserrat', Arial;
+    margin: 1em 2em 0 2em;
+}
+
+#the-venue-main-text p:nth-of-type(3), #the-venue-main-text p:nth-of-type(4) {
+/* 
+    border: 4px solid green;
+*/
+    margin: 0 0 0 0 ;
+    padding: .5em 2em 0 2em;
+    position: relative;
+}
+
+#the-venue-main-text:last-child{
+    margin: 0 0 2em 0;
+}
+
+#the-schedule-main-text ul:last-child{
+    margin: 0 0 1.5em 0;
+}
+
+.exterior-image-slider-wrapper {
+    display: flex;
+        flex-direction: ltr;
+        justify-content: space-around;
+        align-items: center;
+        align-content:center;
+        flex-wrap: nowrap;
+/*
+    border: .2em solid pink;
+*/
+    margin: 0 auto;
+    width: 20em;
+}
+
+.exterior-image-slider-wrapper button{
+    background: none;
+    border: none;
+    color: #fff;
+    display: flex;
+        position: relative;
+    font: normal 4em/180% 'Oswald', Arial;
+    margin: auto;
+    opacity: .7;
+    padding-bottom: .2em;
+    text-decoration: none;
+    height: 2em;
+    width: .8em;
+    z-index: 6;
+}
+
+.exterior-image-slider-wrapper button:hover{
+    background-color: rgba(245,245,245, 0.5);
+    border-radius: .5em;
+}
+
+.exterior-image-slider-wrapper button:active{
+    color: #FFF;
+    background-color: #7851A9;
+}
+
+.slide-move-left {
+    left: 0;
+}
+
+.slide-move-right {
+    right: 1.65em;
+}
+
+/*====== BEGIN INLINE SECTION W/ SLIDER ========*/
+
+.interior-image-slider-wrapper {
+       border-radius: .8em;
+        height: 13em;
+            min-height: 13em; /*makes sure it doesnt' fold under the pressure from the div below */
+/*
+    border: .25em solid #7851A9;
+*/
+    display: flex;
+        align-items: auto;
+            flex-direction: row;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+
+#wedding-slider-wrapper img {
+
+    border-radius: .8em;
+
+    display: none;
+        flex-direction: column;
+    position: relative;
+        left: -3em;
+        top: -1em;
+    max-width: 21em;
+    margin: auto;
+    z-index: 0;
+/*
+        transform: rotate(-45deg);
+*/   
+
+/*
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    */
+
+}
+
+
+.slide-in {
+    animation: slide-in 0.5s forwards;
+    -webkit-animation: slide-in 0.5s forwards;
+}
+
+@keyframes slide-in {
+    100% { transform: translateX(100%); }
+}
+
+@-webkit-keyframes slide-in {
+    100% { -webkit-transform: translateX(100%); }
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+ 
+
+/* begin the bottom WEDDING INFORMATION section ======================================== */
+
+#wedding-information-content-wrapper::before {
+/*
+    border: 2px solid red;
+*/
+    display: inline-flex; 
+    content: " "; 
+    margin-top: -200px; /* moves the before item way up the page */
+    height: 200px;  /* make surre that the before item fills the entre margin *;/
+    visibility: hidden; /* we don't want to see the before element */
+    pointer-events: none; /* can't click on it, and the mouse wont' show it exists */
+    width: 100%;
+}
+
+#the-schedule-main-text p{
+/*
+    border: 1px solid orange;
+*/
+    font: normal .8em/180% 'Montserrat', Arial;
+    padding: 1em 2em 0 2em;
+}
+
+#the-schedule-article-wrapper::before {
+/*
+    border: 2px solid red;
+*/
+    display: block; 
+    content: " "; 
+    margin-top: -400px; /* moves the before item way up the page */
+    height: 400px;  /* make surre that the before item fills the entre margin *;/
+    visibility: hidden; /* we don't want to see the before element */
+    pointer-events: none; /* can't click on it, and the mouse wont' show it exists */
+}
+
+#important-info-text hr{
+    width: 80%;
+    height: .1em;
+    margin: 1em auto;
+    background-color:#ccc;
+    border: none;
+}
+
+#important-info-text p.question, #the-schedule-main-text p.question{
+/*
+    border: 1px solid orange;
+*/
+    font: bold 1em/180% 'Montserrat', Arial;
+    margin: 1.5em 1em 0 1.2em;
+    padding: 0 0 0 .5em;
+}
+
+#important-info-text p.answer, #the-schedule-main-text p.answer{
+/*
+    border: 1px solid orange;
+*/
+    font: normal .8em/180% 'Montserrat', Arial;
+    margin: 0;
+    padding: 0 1em 0 2em;
+}
+
+#important-info-text .info-main {
+    font: bold 1em/140% 'Montserrat', Arial;
+    margin: 1em 0 0 0;
+}
+
+#important-info-text:last-child {
+    margin: 0 0 2em 0;
+}
+
+#the-schedule-main-text:last-child{
+    margin: 0 0 1em 0;
+}
+
+/* ============== BEGIN Resources section =========================================================================*/
+/* =================================================================================================*/
+/* =================================================================================================*/
+
+
+/* the code below allows us to click the link at the top and navigate immediately to the contact form, 
+ vs. having the content actually hit the top of the browswer window and get buried by the nav bar
+ */
+#contact-form-section-wrapper::before {
+/*
+    border: 2px solid red;
+*/
+    display: block; 
+    content: " "; 
+    margin-top: -100px; /* moves the before item way up the page */
+    height: 100px;  /* make surre that the before item fills the entre margin *;/
+    visibility: hidden; /* we don't want to see the before element */
+    pointer-events: none; /* can't click on it, and the mouse wont' show it exists */
+}
+
+#contact-form-article {
+    display: flex;
+    margin: 1em auto 50px auto;
+}
+
+
+#contact-form-interior-inside{
+    border-radius: 0 0 15px 15px;
+}
+
+
+
+.cf-accordion {
+    background: #7851A9;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 -1px 15px -2px rgba(0,0,0,.8);
+    color: #FFF;
+    cursor: pointer;
+    display: inline-block;
+        justify-content: center;
+    text-align: center;
+
+    width: 100%;
+}
+
+.cf-accordion p{
+    display: inline-block;
+    font-size: 12px;
+    padding: .5em;
+}
+
+.cf-accordion:before {
+/*  
+    border: 1px solid pink;
+*/
+    content: "\f078  ";
+    font-family: FontAwesome;
+    font-size: .8em;
+    display: inline-block;
+    position: relative;
+}
+
+
+.cf-accordion.downChevron:before {
+/*
+    border: 2px solid red;
+*/
+    content: "\f078  ";
+    display: inline-flex;
+    font-family: FontAwesome;
+    font-size: .8em;
+    transform: rotate(-180deg);
+        transition-duration: 200ms;
+            -webkit-transition-duration: 200ms;
+                -moz-transition-duration: 200ms;
+                    -ms-transition-duration: 200ms;
+                        -o-transition-duration: 200ms;
+}
+
+.cf-accordion:after {
+/*  
+    border: 1px solid pink;
+*/
+    content: "\f078  ";
+    font-family: FontAwesome;
+    font-size: .8em;
+    display: inline-block;
+    position: relative;
+}
+
+
+.cf-accordion.downChevron:after {
+/*
+    border: 2px solid red;
+*/
+    content: "\f078  ";
+    display: inline-flex;
+    font-family: FontAwesome;
+    font-size: .8em;
+    transform: rotate(180deg);
+        transition-duration: 200ms;
+            -webkit-transition-duration: 200ms;
+                -moz-transition-duration: 200ms;
+                    -ms-transition-duration: 200ms;
+                        -o-transition-duration: 200ms;
+}
+
+
+.cf-panel {
+    background-color: #FEFEFA;
+    max-height: 0;
+    overflow: hidden;
+    padding: 18px 0;
+    transition: max-height 0.35s ease-in-out;
+    -webkit-transition: max-height 0.35s ease-in-out;
+        -moz-transition: max-height 0.35s ease-in-out;
+            -ms-transition: max-height 0.35s ease-in-out;
+                -o-transition: max-height 0.35s ease-in-out;
+}
+
+.interior-article-wrapper.short.thin {
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+    max-width: 500px;
+            /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0 .7em .5em -.5em #000;
+        -webkit-box-shadow: 0 .5em .8em -.8em #000;
+            -moz-box-shadow: 0 .5em .8em -.8em #000;
+    -webkit-box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.3); 
+        box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.3);
+            -moz-box-shadow: 0 0 15px 3px rgba(0,0,0,0.3);
+}
+
+
+#contact-form hr {
+    background-color: #000;
+    height: 1px;
+    margin: 10px auto 20px auto;
+    width: 80%;
+}
+
+.header-ribbon {
+    display: flex;
+    height: 50px;
+    background-color: #7851A9;
+    margin: 0 0 50px 0;
+    position: relative;
+    top: 40px;
+}
+
+.header-ribbon h5{
+    color: #fff;
+    font:  100 1.6em/50% 'Oleo Script', arial;
+    margin: 20px auto 0 auto;
+    padding: 0 10px;
+}
+
+#contact-form {
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+    text-align:center;
+}
+
+/* content can only be inserted before or after an element */
+.error-box-input i{
+    color: #FF0000;
+    display: none; 
+    font-family: FontAwesome;
+    font-size: 1.2em;
+    line-height: 120%;
+    position: relative;
+        top: -15px;
+    vertical-align: center;
+    z-index: 999;
+}
+
+.error-box-input i::after{
+    color: #FF0000;
+    font-family: Arial;
+    content: "fill me in please";
+    padding: 0 0 1em;
+}
+
+.error-box i{
+    color: #FF0000;
+    display: none; 
+    font-family: FontAwesome;
+    font-size: 1.2em;
+    line-height: 120%;
+    position: relative;
+        top: -25px;
+    vertical-align: center;
+    z-index: 999;
+}
+
+#contact-form p {
+    font: normal 1em/160% 'Montserrat', Arial;
+    margin: 0 20px 0 20px;
+}
+
+#contact-form input[type=text],
+#contact-form input[type=email] {
+    font: normal 1.2em/100% 'Montserrat', Arial;
+    display: flex;
+    margin: 0 auto;
+}
+
+#contact-form #cf-text-area-wrapper {
+    display: flex;
+        width: 80%;
+        margin: 0 auto 30px auto;
+}
+
+#contact-form #cf-text-area-wrapper label{
+    display: block;
+        width: 90%;
+        margin: 0 auto;
+}
+
+#contact-form textarea {
+    background: #F9F9F9;
+    border-radius: 10px;
+    /* =========== BORDER BOX prevents things from getting weird when I add a padding to it */
+    box-sizing: border-box;
+    display: flex;
+    font: normal 1.2em/120% 'Montserrat', Arial;
+        width: 98%;
+        max-width:98%;
+        min-width:98%;
+    height: 200px;
+    margin: auto;
+    padding: 10px;
+    resize: vertical;
+}
+
+#contact-form input[type=number]{
+    background: #F9F9F9;
+    border-radius: 5px;
+    display: flex;
+    font: normal 1.2em/100% 'Montserrat', Arial;
+        max-width: 400px;
+        margin: 10px auto 30px auto;
+    padding: 5px 8px;
+    width: 50px;
+}
+
+#contact-form input[type=text],
+#contact-form input[type=email]{
+    background: #F9F9F9;
+    border-radius: 12px;
+    display: flex;
+    height: 40px;
+    padding: 0 0 0 15px;
+    width: 350px;
+}
+
+#contact-form label {
+    display: flex;
+        flex-direction: column;
+}
+
+#contact-form label h6 {
+    font: normal 1.4em/100% 'Oswald', Arial;
+    margin: 10px auto;
+    padding: 0 10px;
+}
+
+#contact-form input[type=text]:focus,
+#contact-form input[type=email]:focus,
+#contact-form input[type=number]:focus,
+#contact-form textarea:focus {
+    background-color: #FEFEFA;
+    box-shadow: inset 0 0 0 2px #7851A9;
+}
+
+#contact-form input[type=text]:active,
+#contact-form input[type=email]:active,
+#contact-form input[type=number]:active,
+#contact-form textarea:active {
+    box-shadow: inset 0 0 0 2px #7851A9;
+}
+
+
+#contact-form #cf-submit {
+    background-color: #7851A9;
+    border-radius: 6px;
+    color: #fff;
+    display: flex;
+        justify-content: center;
+    font: normal 1.4em/100% 'Oswald', Arial;
+    height: 2.5em;
+    margin: 0 auto 20px auto;
+    position: relative;
+    width: 50%;
+}
+
+
+#contact-form #cf-submit:hover {
+    background-color: #9c41c9;
+    box-sizing: border-box;
+    -webkit-box-shadow: 0px 4px 7px 0px rgba(0,0,0,0.4); 
+        box-shadow: 0px 4px 7px 0px rgba(0,0,0,0.4);
+    top: -2px;
+    height: 2.6em;
+        width: 51%;
+    margin: 0 auto 17.9px auto;
+    position:relative;
+}
+
+#contact-form #cf-submit:hover:after {
+
+}
+
+#contact-form #cf-submit:active {
+       background-color: #7851A9;
+    -webkit-box-shadow: inset 0px 5px 23px 2px rgba(0,0,0,0.56),
+                        inset 0px 2px 3px 3px rgba(0,0,0,.8); 
+        box-shadow: inset 0px 5px 23px 2px rgba(0,0,0,0.56)
+                        inset 0px 2px 3px 3px rgba(0,0,0,.8);
+    background-color: #64138b;
+    top: 2px;
+    height: 2.5em;
+        margin: 0 auto 20px auto;
+    width: 50%;
+}
+
+#contact-form #cf-submit:focus {
+    /* animation:bouncy 4s infinite ease-in-out; 
+            cool but not sure when to use this perzactly */
+}
+
+.bouncy{
+
+}
+
+@keyframes bouncy {
+    0%{top:0em}
+    40%{top:0em}
+    43%{top:-0.9em}
+    46%{top:0em}
+    48%{top:-0.4em}
+    50%{top:0em}
+    100%{top:0em;}
+}
+
+/* BEGIN FOLLOW US widget -===================================================*/
+
+#follow-us-article {
+    margin: 0 auto 50px auto;
+}
+
+#follow-us-sm-ul {
+    display: flex;
+        justify-content: center;
+}
+
+#follow-us-sm-ul li{
+    display: inline-flex;
+    margin: 10px 20px;
+}
+
+#follow-us-article p {
+    font: normal 1em/160% 'Montserrat', Arial;
+    margin: 0 20px 0 20px;
+}
+
+
+/* Begin the TRAVEL section ==================================================*/
+
+#directions-content-wrapper::before, 
+#accomodations-content-wrapper::before,
+#things-to-do-content-wrapper::before{
+/*
+    border: 2px solid red;
+*/
+    display: inline-flex; 
+    content: " "; 
+    margin-top: -200px; /* moves the before item way up the page */
+    height: 200px;  /* make surre that the before item fills the entre margin *;/
+    visibility: hidden; /* we don't want to see the before element */
+    pointer-events: none; /* can't click on it, and the mouse wont' show it exists */
+    width: 100%;
+}
+
+#travel{
+/*
+    border: .5em solid green;
+*/
+    display: flex;
+    flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    width: 100%; /* vh makes sure that the full content is the height of the view screen - 
+                    mainly so that our footer will constantly scale with added content and
+                    consistently seat itself at the bottom of the page */
+}
+
+#travel #top-image-empty-wrapper{
+    background: none;
+}
+
+#travel #top-image-empty-wrapper iframe {
+    display: flex;
+/*
+    border: .4em solid orange;
+*/
+
+    height: 1000px;
+        position: relative;
+        top: 0;
+    width: 100%;
+        background-size: cover;
+        -webkit-background-size: cover;
+            -moz-background-size: cover;
+                 -o-background-size: cover;
+}
+
+#travel footer {
+    position: relative;
+}
+
+.travel-section-header, 
+.accomodations-section-header {
+    background-color: #7851A9;
+    display: flex;
+        justify-content: center;
+        align-content: center;
+    height: 4em;
+}
+
+.travel-section-header-interior{
+/*
+        border: 1px solid orange;
+*/
+    background-color: #7851A9;
+    color: white;
+    display: flex;
+        justify-content: center;
+        align-content: center;
+        max-width: 16em;
+}
+
+.travel-section-header-interior h4 { 
+    display: flex; 
+    font: normal 2.2em/100% 'Lobster', Arial;
+    margin: auto 0;
+}
+
+.travel-section-header-interior a{
+    color: white;
+    text-decoration: none;
+    pointer-events: none;
+}
+
+#travel .full-section-wrapper {
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+    position: relative;
+}
+
+#travel .section-wrapper {
+    display: flex;
+        flex-direction: column;
+}
+
+#travel .section-interior-wrapper{
+/*
+    border: .3em solid pink;
+*/
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+}
+
+#travel .section-interior-wrapper ul,
+#travel .section-interior-wrapper ol{
+    display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+}
+
+#travel .article-wrapper-flex-row {
+    background-color: white;
+    border-radius: .8em;
+/*
+    border: 2px solid blue;
+*/
+    display: flex;
+        flex-direction: row;
+        justify-content: center;
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0 .7em .5em -.5em #000;
+        -webkit-box-shadow: 0 .5em .8em -.8em #000;
+            -moz-box-shadow: 0 .5em .8em -.8em #000;
+    width: 90%;
+    max-width: 70em;
+    margin: 2em auto 0 auto;
+}
+
+/* remember that the regular wrapper is designed to simply be a row */ 
+
+#travel .interior-article-wrapper-nested {
+/*
+    border: .3em solid purple;
+*/
+    display: flex;
+        align-content: center;
+        flex-direction: column;
+        justify-content: center;
+    max-width: 40em;
+    min-width: 20em;
+    padding: 0;
+    margin: 0;
+}
+
+#travel .section-article-text,
+#travel .section-article-text-reversed {
+/*
+    border: .3em solid green;
+*/
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    height: 100%;
+    padding: 0;
+}
+
+#travel .section-article-text p{
+/*
+    border: 2px solid orange;
+*/ 
+        position: relative;
+    margin: 0;
+}
+
+
+#travel .section-article-text li:last-child,
+#travel .section-article-text-reversed li:last-child {
+    margin: 0 0 2em 0;
+}
+
+#travel .section-article-text li:first-child,
+#travel .section-article-text-reversed li:first-child {
+    margin: 1em 0 0 0;
+}
+
+#travel .section-article-text li p,
+#travel .section-article-text-reversed li p{
+/*
+    border: 2px solid blue;
+*/
+        position: relative;
+    font: normal .8em/180% 'Montserrat', Arial;
+    margin: 1em 2em 0 2em;
+    padding: 0;
+}
+
+#travel .interior-article-wrapper { /* really, need to fix the headers - as they should
+                                        be about 2em above their wrapper with positioning
+                                        since that is how they exist on the main page. */
+    margin: 2em auto 0 auto;
+}
+
+#travel .interior-article-wrapper-nested{
+/*
+    border: 2px solid orange;
+*/
+border-radius: .8em;
+    background-color: #fff;
+    display: flex;
+        align-content: center;
+        flex-direction: column;
+        justify-content: center;
+    max-width: 40em;
+    min-width: 20em;
+    box-shadow: 0; 
+}
+
+
+#travel .interior-article-wrapper-nested:first-child,
+#travel .interior-article-wrapper-nested-reversed:last-child{
+/*
+    border: .2em solid aqua;
+*/
+    margin: 0 1% 0 0;
+}
+
+#travel .interior-article-wrapper-nested:last-child
+#travel .interior-article-wrapper-nested-reversed:first-child{
+    margin: 0 0 0 1%;
+}
+
+#directions-main-image,
+#accomodations-main-image {
+/*
+    border: .3em solid purple;
+*/
+    display: flex;
+    flex-direction: column;
+        justify-content: center;
+}
+
+#directions-main-image img,
+#accomodations-main-image img {
+/*
+    border: .3em solid orange;
+*/
+    border-radius: .5em;
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+    margin: auto;
+    position: relative;
+    max-width: 30%;
+    min-width: 20em;
+}
+
+
+.to-do-div {
+/*
+    border: .5em solid purple;
+*/
+    display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-around;
+}
+
+
+.to-do-ul,
+.to-eat-ul,
+.to-drink-ul,
+.fomo-ul {
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+    text-align: center;
+}
+
+.to-do-ul h6,
+.to-eat-ul h6,
+.to-drink-ul h6,
+.fomo-ul h6 {
+    display: flex;
+    font: bold 1.5em/140% 'Oswald', Arial;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.to-do-ul li,
+.to-eat-ul li,
+.to-drink-ul li,
+.fomo-ul li{
+    display: flex;
+        justify-content: center;
+}
+
+#travel .to-do-ul li p,
+#travel .to-eat-ul li p,
+#travel .to-drink-ul li p,
+#travel .fomo-ul li p{
+    margin: 0;
+}
+
+/* =--------- BEGIN FAQ =====================================================================*/
+/* ==========================================================================================*/
+
+#faq-main {
+/*
+    border: 2px solid orange;
+*/
+    display: flex;
+    flex-direction: column;
+        justify-content: center;
+        align-content: center;
+}
+
+#faq-interior-div{
+    width: 95%;
+    margin: auto;
+}
+
+#faq-text #main-faq-hr{
+    width: 80%;
+    height: .1em;
+    margin: 1em auto;
+    background-color: #ccc;
+    border: none;
+}
+
+#faq-text hr{
+    background-color: #ccc;
+    border: none;
+    margin: 0 auto;
+    width: 100%;
+        height: 2px;
+
+}
+
+
+#faq-text p.question{
+/*
+    border: 1px solid orange;
+*/
+    font: bold 1em/180% 'Montserrat', Arial;
+    margin: 0;
+    padding: .5em 0 .5em 1em;
+    text-decoration: underline;
+}
+
+#faq-text p.answer{
+/*
+    border: 1px solid orange;
+*/
+    font: normal .8em/180% 'Montserrat', Arial;
+    margin: 0;
+    padding: 0 1em 0 3em;
+}
+
+#faq-text .info-main {
+    font: bold 1em/140% 'Montserrat', Arial;
+    margin: 1em 0 0 0;
+}
+
+#faq-text:last-child {
+    margin: 0 0 2em 0;
+}
+
+.panel {
+    background-color: #FFF;
+    max-height: 0;
+    overflow: hidden;
+    padding: 18px 0;
+    transition: max-height 0.2s ease-out;
+}
+
+.accordion {
+    background-color: #F5F5F5;
+    color: #444;
+    cursor: pointer;
+    display: flex;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    margin: 0 auto;
+    transition: 0.4s;
+}
+
+.accordion:hover, 
+.accordion:active,
+.accordion:focus{
+    background-color: #7851A9;
+    color: #FFF;
+}
+
+.active_accordion {
+    background-color: #7851A9;
+    border-radius: 20px;
+    color: #FFF;
+}
+
+#faq-text .active_accordion p{
+    text-decoration: none;
+}
+
+#faq-text .active_accordion p:nth-of-type(2) {
+    margin: 1em 0 1em 0;
+}
+
+
+/* ============== BEGIN Footer =========================================================================*/
+/* =================================================================================================*/
+/* =================================================================================================*/
+
+#thisFooter {
+/*
+    border: 1px solid red;
+*/
+    /*background-color: #F5F5F5;*/
+    /*background: bg-color bg-image position/bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit; */
+                                /* position = horizontal position vertical position */
+    background: url("../art/patterns/xv/xv/xv.png") repeat -15px;
+ 
+    display: flex;
+    flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    width: 100%;
+    position: relative;
+        bottom: 0;
+}
+
+/* let's make sure this bastard looks right on the other pages */
+/* useful back when I was assigning the footer background on page load */
+.footerChange {
+/*
+    border: 2px solid red;
+*/
+    background: url("../art/patterns/xv/xv/xv.png") repeat center -15px;
+}
+
+#footer-backer-filigree {
+        display: flex;
+    flex-direction: column;
+    z-index: 49;
+    width: 40em;
+    margin: auto;
+    position: relative;
+        top: 2em;
+
+    -webkit-transform: scaleY(-1);
+        transform: scaleY(-1)
+}
+
+#footer-interior-wrapper {
+    z-index: 50;
+    background-color: #000;
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+.footer-link a{
+    color: #FFF;
+}
+
+.footer-link:hover a, 
+.footer-link:focus a{
+    color: #7851A9;
+}
+
+
+#countdown-timer-wrapper{
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+    position: relative;
+    top: -1em;
+}
+
+#countdown-timer-title {
+    background-color: #000;
+    border-radius: 1.5em;
+    box-shadow: inset 0 0 0 .2em rgba(0,0,0,1), /*whichever shadow is on top is display, ahem, on top*/
+                inset 0 0 0 .5em rgba(255,255,255,1),
+                0 -.1em .6em 0.02em rgba(0,0,0,.8);
+
+        flex-direction: column;
+    position: relative;
+        top: -1em;
+    margin: auto;
+    text-align: center;
+    width: 12em;
+
+}
+
+#countdown-timer-title p{
+    color: white;
+    font: normal 1.2em/100% 'Oswald', serif;
+    padding: .5em 0 0.7em 0;
+}
+
+
+#blocker {
+    background-color: #000;
+        flex-direction: column;
+    position: relative;
+        top: -1.7em;
+    margin: auto;
+    height: .8em;
+    width: 12em;
+}
+
+.countdown-timer-wrapper-hr{
+    background-color: rgba(255,255,255, 0.5);
+    border: none;
+    border-radius: .2em;
+    height: .1em;
+    width: 90%;
+}
+
+#countdown-timer{
+    display: flex;
+        flex-direction: ltr; /* Left-To-Right */
+        justify-content: space-between;
+    margin: auto;
+    position: relative;
+        top: -1em;
+}
+
+.time-wrapper {
+    background-color: #7851A9;
+    border-radius: .3em;
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content:center;
+    margin: 0 .2em;
+    text-align: center;
+    width: 4.5em;
+}
+
+
+#days, #hours, #minutes, #seconds {
+    color: #fff;
+    display: flex; 
+        flex-direction: column;
+        font: normal 1.5em/100% 'Lora', serif;
+    padding: .4em 0 0 0;
+    text-align: center;
+}
+
+.countdown-timer-label{
+/*
+    border: 1px solid blue;
+*/  
+    color: white;
+    font: normal .8em/100% 'Raleway', sans-serif; 
+    padding: 0 0 .5em 0;
+
+}
+
+#thisFooter ul li p{
+    color: #fff;
+}
+
+
+#footer-sitemap {
+/*
+    border: 2px solid red;
+*/
+    display: flex;
+        flex-direction: row;
+        justify-content: center;
+    font: normal 1em/100% 'Raleway', sans-serif; 
+    margin: 0 auto 2em auto;
+}
+
+#footer-sitemap h6{
+    color: white;
+        font: normal 1.5em/100% 'Oswald', sans-serif; 
+    margin: 0 0 .2em 0;
+
+}
+
+#footer-sitemap ul {
+/*
+    border: 2px solid orange;
+*/
+    display: flex;
+        flex-direction: column;
+    margin: 0 1em;
+}
+
+#footer-sitemap ul li{
+    margin: 7px 0 0 0 ;
+}
+
+
+.footer-sitemap-group{
+    display: flex;
+        flex-direction: row;
+}
+
+.footer-sitemap-divs {
+    display: flex;
+        align-items: space-between;
+}
+
+
+
+/* ========================================*/
+/* =================================================================================================================================== */
+/* ========== Viewport Action ======================================================================================================== */
+@media (max-width: 1050px) {
+
+    .top-image-wrapper {
+        min-height: 20em;
+    }
+
+    .nav-container {
+        width: 100%;
+    }
+
+    .navigation-container {
+        width: 100%;
+            max-width: 100%;
+            min-width: 100%;
+    }
+
+    #dropdown-link-1, #dropdown-link-2 {
+        padding: 3em 0 .5em 0;
+    }
+
+    .dropdown-content-1 ul {
+        top: .9em;
+        left: -6em;
+    }
+
+    .dropdown-content-2 ul {
+        top: .9em;
+    }
+
+   
+}
+
+@media (max-width: 950px) {
+
+}
+
+/* was 920*/
+@media (max-width: 850px) {
+
+/*
+    #top-image-empty-wrapper {
+        background: url("../images/beach-byJayCurtis.png") 45% 10% no-repeat fixed;
+    }
+*/
+
+    /*make sure the navigation at the top flows as it should */
+    .navigation-container, .nav-container  {
+        width: 100%;
+            max-width: 100%;
+            min-width: 20em;
+    }
+
+    .navbar-brand img {
+        margin-left: 10%;
+    }
+   
+   
+    .navbar-toggle-container {
+/*
+        border: 1px solid green;
+*/
+        display: block;
+        border-radius: .3em;
+        float: none;
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        top: .9em;
+            height: 2em;
+            width: 2em;
+        right: 1.5em;
+        z-index: 9999;
+          width: 60px;
+        -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                    transform: rotate(0deg);
+        -webkit-transition: .5s ease-in-out;
+            -moz-transition: .5s ease-in-out;
+                -o-transition: .5s ease-in-out;
+                    transition: .5s ease-in-out;
+        cursor: pointer;
+    }
+
+    #hamburger-icon {
+/*
+        border: 1px solid blue;
+*/
+        position: relative;
+        height: 2em;
+        width: 2em;
+    }
+
+    #hamburger-icon span {
+        background: #7851A9;
+        border-radius: .5em;
+        display: block;
+        position: relative;
+            height: .5em;
+            width: 2.5em;
+        opacity: 1;
+        transform: rotate(0deg);
+            -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                    -o-transform: rotate(0deg);
+        transition: .25s ease-in-out;
+            -webkit-transition: .25s ease-in-out;
+                -moz-transition: .25s ease-in-out;
+                    -o-transition: .25s ease-in-out;
+        }
+   
+    #hamburger-icon span:nth-child(1) {
+        top: 0em;
+        transform-origin: left center;
+            -webkit-transform-origin: left center;
+                -moz-transform-origin: left center;
+                    -o-transform-origin: left center;
+    }
+
+    #hamburger-icon span:nth-child(2) {
+        top: .4em;
+        transform-origin: left center;
+            -webkit-transform-origin: left center;
+                -moz-transform-origin: left center;
+                    -o-transform-origin: left center;
+    }
+
+    #hamburger-icon span:nth-child(3) {
+        top: .8em;
+        transform-origin: left center;
+            -webkit-transform-origin: left center;
+                -moz-transform-origin: left center;
+                    -o-transform-origin: left center;
+    }
+
+    #hamburger-icon.open span:nth-child(1) {
+        top: 0;
+        transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                    -o-transform: rotate(45deg);
+    }
+
+    #hamburger-icon.open span:nth-child(2) {
+        width: 0%;
+        opacity: 0;
+    }
+
+    #hamburger-icon.open span:nth-child(3) {
+        top: .8em;
+        transform: rotate(45deg);
+            -webkit-transform: rotate(-45deg);
+                -moz-transform: rotate(-45deg);
+                    -o-transform: rotate(-45deg);
+    }
+   
+    #hamburger-icon.open:after {
+    }
+   
+
+    .nav-container {
+        background: url("../art/patterns/greek-vase/greek-vase.png") repeat;
+        box-shadow: 0 1em 1em -1em rgba(0,0,0,1);
+            -webkit-box-shadow: 0 1em 1em -1em rgba(0,0,0,1);
+                -moz-box-shadow:  0 1em 1em -1em rgba(0,0,0,1);
+        display: block ;
+        position: fixed;
+            top: 0;
+            left: 0;
+        height: 4em;
+        width: 100%;
+    } 
+
+   
+    .navigation, .navigation-container {
+        display: none;
+        width: 100%;
+    }
+
+  /* make sure the original brand container doesn't pop up and ruin our day */
+    .brand-container{
+        display: none;
+    }
+
+    .brand-container-toggle{
+        display: block;
+        margin: 0 0 0 1.5em;
+        position: relative;
+            top: .8em;
+
+    }
+
+    .navbar-brand {
+        font: italic normal 2.5em/100% 'Oleo Script', arial;
+            text-shadow:.03em .03em 0 #7851A9, /* royal purple hex */
+                .05em .05em 0 #780116,
+                .08em .08em 0 #5C0029, 
+                .11em .11em 0 #ff0000,
+                .11em .11em .15em rgba(0,0,0,.8),
+                0 0 .08em rgba(0,0,0,.8);
+    }
+
+    .navbar-brand span{
+        font: italic normal 1.3em/50% 'Oleo Script', arial;
+        position: relative;
+            top:.1em;
+            right: 0;
+    }
+
+    .navbar-brand:hover {
+        color: #7851A9;
+        text-shadow:
+                -1px -1px 0 #fff,  
+                1px -1px 0 #fff,
+                -1px 1px 0 #fff,
+                1px 1px 0 #fff,
+                .03em .03em 0 #7851A9, /* royal purple hex */
+                .05em .05em 0 #780116,
+                .08em .08em 0 #5C0029, 
+                .11em .11em 0 #ff0000,
+                .11em .11em .15em rgba(0,0,0,.8),
+                0 0 .08em rgba(0,0,0,.8);
+          -webkit-background-clip: text;
+     -moz-background-clip: text;
+          background-clip: text;
+    }
+
+
+    /* this takes the navigation and pops it below the logo and hamburger icon, this is, of course, 
+    after the js navclick() has applied the class of .responsive to the navigation */
+    .navigation-container-toggle.responsive {
+        background: #cbcbcb;
+        box-shadow: 0 1em 1em -1em rgba(0,0,0,1);
+            -webkit-box-shadow: 0 1em 1em -1em rgba(0,0,0,1);
+                -moz-box-shadow:  0 1em 1em -1em rgba(0,0,0,1);
+        display: block;
+            overflow-y: scroll;
+            height: 78vh;
+        position: relative;
+            top:1.5em;
+        -webkit-overflow-scrolling:touch; /* mobile safari*/
+
+        z-index:9999;
+    }
+
+
+/* okay the trickiness here was to make sure to set the main navigation div to a height that would just
+    fit the view window. vh in this case. then anything that was overflowing that from the
+    interior, navigation div would cause it to scroll y */
+
+    .navigation-container-toggle.responsive .navigation {
+        box-shadow: 0 1em 1em -1em rgba(0,0,0,1);
+            -webkit-box-shadow: 0 1em 1em -1em rgba(0,0,0,1);
+                -moz-box-shadow:  0 1em 1em -1em rgba(0,0,0,1);
+         background: #cbcbcb;
+        box-shadow: 0 1em 1em -1em rgba(0,0,0,1);
+            -webkit-box-shadow: 0 1em 1em -1em rgba(0,0,0,1);
+                -moz-box-shadow:  0 1em 1em -1em rgba(0,0,0,1);
+        display: block;
+            float: none;
+        position: relative;
+            height: 100%;
+            width: 100%;
+            /*
+            height: 20em;
+            */
+            margin: auto;
+            padding: 0;
+            max-width: 100%;
+    }
+
+    .navigation-container-toggle.responsive .navigation li {
+        display: block;
+        width: 100%;
+    }
+
+    .navigation-container-toggle.responsive .navigation a {
+        background: #cbcbcb;
+        color: white;
+        font: normal 1.5em/100% 'Oswald', Arial;
+        width: 100%;
+        padding: .7em 0;
+    }
+
+    .navigation-container-toggle .navigation a:hover {
+        background: #7851A9;
+    }
+
+   
+    /* selects the last li that is a child of parent navigation */
+    /* nth-child just selects the particular child of a parent element
+    no matter what the **** it might be */
+    .navigation a:nth-child(6) {
+        padding-bottom: 1.5em;
+    }
+
+    #rsvp-form #attendee-rsvp-accept-decline-box{
+        flex-direction: column;
+            justify-content: center;
+    }
+
+
+    /* adjust the attendee rsvp page so that it starts to align into columns */
+    #rsvp-form #attendee-rsvp-accept-decline-box ul{
+        flex-direction: column;
+            justify-content: center;
+    }
+
+    #rsvp-form #attendee-rsvp-accept-decline-box li {
+        display: flex;
+            justify-content: center;
+    }
+
+    .section-content-interior-wrapper {
+        flex-direction: column;
+            justify-content: center;
+    }
+
+    .interior-article-wrapper.inline:first-child{
+        height: 100%;
+    }
+
+    .interior-article-wrapper.inline:first-child,
+    .interior-article-wrapper.inline:last-child {
+        margin: 2em auto 0 auto;
+        max-width: 90%;
+    }
+
+
+    .content-interior-header h4{
+        font: normal 2.2em/100% 'Lobster', Arial;
+        margin: 0 auto 0 auto;
+    }
+
+    #travel .article-wrapper-flex-row {
+        flex-direction: column;
+    }
+
+    #accomodations-main-image, 
+    #directions-main-image {
+        margin: 2em 0;
+    }
+
+    .rsvp-bottom-filigree-image ,
+    .rsvp-top-filigree-image {
+        max-width: 20em;
+    }
+
+}
+
+@media (max-width: 750px) {
+    #rsvp-form #attendee-rsvp-interior{
+        flex-direction: column;
+    }
+
+    #attendee-rsvp-complete-interior{
+        flex-direction: column;
+    }
+
+    .to-do-div {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .to-do-div ul{
+    }
+}
+
+
+@media (max-width: 700px) {
+    #footer-backer-filigree{
+        width: 30em;
+        top: 1.5em;
+    }
+
+    .content-interior-header h4{
+/*
+        border: .2em solid green;
+*/
+        min-width: 7.2em;
+    }
+
+    #footer-sitemap {
+        flex-direction: column;
+            justify-content: center;
+            align-content: center;
+        margin: 0 2em 2em 2em;
+    }
+
+    #footer-sitemap .footer-sitemap-group{
+    /*
+        border: 2px solid blue;
+    */
+        justify-content: space-between;
+    }
+
+    #footer-sitemap .footer-sitemap-group:nth-child(2){
+        margin: 2em 0 0 0;
+    }
+}
+
+@media (max-width: 630px) {
+    .rsvp-wedding-date-box {
+        width: 20em;
+    }
+
+    .rsvp-wedding-date-box p.rsvp-wedding-date{
+        /* offset-x | offset-y | blur-radius | color */
+        text-shadow: .05em .05em 0 #fff, .02em .02em .5em #fff;
+        font: bold 1.2em/100% 'Oswald', Arial;
+        letter-spacing: .06em;
+        padding: 0 0 .5em 0;
+
+    }
+
+    .rsvp-wedding-date-box a{
+        /* offset-x | offset-y | blur-radius | color */
+        text-shadow: .05em .03em 0 #fff, .03em .03em .5em #fff;
+        font: bold 2em/100% 'Bungee Shade', Arial;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+    }
+
+    .rsvp-top-filigree-image , 
+    .rsvp-bottom-filigree-image {
+            max-width: 18em;
+    }
+
+    .content-interior-header{
+        justify-content: center;
+    }
+
+    .section-separator-image-left img {
+        transform: rotate(-135deg);
+    }
+
+    .section-separator-image-right img{
+        transform: rotate(-45deg);
+    }
+
+    .content-interior-header h4{
+/*
+        border: .2em solid green;
+*/
+        margin: auto -5%;
+    }
+}
+
+@media (max-width: 600px) {
+    .results-wrapper {
+            flex-direction: column;
+            justify-content: center;
+            margin:0 auto;
+    }
+
+    .name-results-box {
+
+        flex-direction: column;
+        text-align: center;
+        margin: 0 auto;
+
+    }
+
+    .name-results-box p{
+        font: normal 1.2em/100% 'Oswald', Arial, sans-serif;
+        letter-spacing: .06em;
+        line-height: 120%
+        margin: 3em 0 0 0;
+    }
+
+    #attendee-results-box input[type=Submit]{ /*the search button */
+        font: bold 1.4em/100% 'Oswald', Arial, sans-serif;
+        margin: .5em 0 .5em 0;
+        padding: .7em 3em;
+    }
+
+    .results-form-box {
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .section-separator-image-left {
+        margin-right: -2%;
+    }
+
+    .section-separator-image-right {
+        margin-left: -2%;
+    }
+
+
+}
+
+@media (max-width: 550px) {
+}
+
+@media (max-width: 500px) {
+    #footer-backer-filigree{
+        width: 25em;
+        top: 1.2em;
+    }
+
+    #footer-sitemap {
+        margin: 0 1em 2em 1em;
+    }
+
+    #footer-sitemap .footer-sitemap-group{
+    /*
+        border: 2px solid blue;
+    */
+        justify-content: flex-start;
+    }
+
+    #footer-sitemap ul {
+    /*
+        border: 2px solid orange;
+    */
+        display: flex;
+            flex-direction: column;
+        margin: 0 .5em;
+    }
+
+    .rsvp-box-interior-two h2{
+        font-size: 8em;
+        margin-top: 0;
+    }
+
+    #login-form input[type="password"]{
+        margin-bottom: 1em;
+    }
+
+}
+
+@media (max-width: 450px) {
+
+    #about-us-main-image-wrapper { 
+        max-width: 15em;
+        min-height: 400px;
+    }
+
+    #our-photos-slider-wrapper {
+        width: 15em;
+    }
+
+    .slide-images {
+        max-width: 15em;
+    }
+
+    .rsvp-top-filigree-image , 
+    .rsvp-bottom-filigree-image {
+            max-width: 15em;
+    }
+
+    .exterior-image-slider-wrapper{
+       width: 15em; 
+    }
+
+    .exterior-image-slider-wrapper button{
+        font: normal 2.5em/180% 'Oswald', Arial;
+        height: 3em;
+        margin: auto;
+        padding: 0;
+        width: .5em;
+    }
+
+    .slide-move-right {
+        right: 3.4em;
+    }
+
+    .section-separator-image-left {
+        margin: 0 -15%;
+    }
+
+    .section-separator-image-right {
+        margin: 0 -15%;
+    }
+
+    .plus-one-wrapper input[type=text] {
+        width: 9.5em;
+    }
+
+    .interior-image-wrapper {
+        width: 15em;
+    }
+
+    #our-story-main-image img {
+        width: 15em;
+    }
+
+    #contact-form input[type=text],
+    #contact-form input[type=email]{
+        width: 250px;
+    }
+
+    #contact-form textarea {
+        font: normal 1.1em/120% 'Montserrat', Arial;
+    }
+
+    #footer-backer-filigree{
+        width: 22em;
+        top: 1em;
+    }
+
+    #footer-sitemap {
+        font: normal .8em/100% 'Raleway', sans-serif; 
+    }
+
+    #footer-sitemap h6{
+        font: normal 1.7em/100% 'Oswald', sans-serif; 
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    #accomodations-main-image img, 
+    #directions-main-image img {
+        min-width: 15em;
+    }
+
+    #login-form input[type="password"]{
+        border-radius: 10px;
+        height: 25px;
+        width: 95%;
+    }
+}
+
+@media (max-width: 380px) {
+
+    #top-image-empty-wrapper {
+        height: 800px;
+    }
+
+    #top-image #main-image{
+        width: 17em;
+    }
+
+    body #top-screen-p-div {
+        top: 22em; 
+    }
+
+    #search-form label{
+        font: normal 1.2em/100% 'Oswald', Arial;
+        margin: 0 .5em .5em .5em;
+    }
+
+    .rsvp-top-filigree-image , 
+    .rsvp-bottom-filigree-image {
+            max-width: 12em;
+    }
+
+    .rsvp-container {
+        margin: 15px auto 0 auto;
+        width: 15em;
+    }
+
+    .rsvp-button, .rsvp-button a:hover:after {
+        width: 6em;
+    }
+
+    .rsvp-wedding-date-box {
+        width: 15em;
+    }
+
+    .rsvp-wedding-date-box p.rsvp-wedding-date{
+        /* offset-x | offset-y | blur-radius | color */
+        text-shadow: .05em .05em 0 #fff, .02em .02em .5em #fff;
+        font: bold 1em/100% 'Oswald', Arial;
+        letter-spacing: .06em;
+        margin: 0 0 1em 0;
+        padding: 0 0 .5em 0;
+
+    }
+
+
+    #countdown-timer{
+
+    }
+
+    .time-wrapper {
+        width: 3.5em;
+    }
+
+    #days, #hours, #minutes, #seconds {
+    }
+
+    .countdown-timer-label{
+    font: normal .6em/100% 'Raleway', sans-serif; 
+
+    }
+
+    #footer-backer-filigree{
+        width: 18em;
+        top: .8em;
+    }
+
+
+    #rsvp-form #attendee-rsvp-wedding-info h4{
+        font: normal 1.8em/100% 'Oswald', serif;
+        margin:0;
+    }
+
+    #attendee-rsvp-complete-wedding-info h4 {
+        font: normal 1.8em/100% 'Oswald', serif;
+        margin:0;
+    }
+
+    
+    #rsvp-complete-form #attendee-rsvp-complete-wedding-info h3 {
+        font: bold 3em/100% 'Sacramento', Arial;
+    }
+
+    #rsvp-complete-form #attendee-rsvp-complete-wedding-info h5 {
+            font: bold 1em/100% 'Lora', serif;
+    }
+
+    .content-interior-header h4{
+/*
+        border: .2em solid green;
+*/
+        margin: auto -15%;
+    }
+
+}
+
+@media (max-width: 350px) {
+    #rsvp-form #attendee-rsvp-wedding-info h3{
+        font: bold 3em/100% 'Sacramento', Arial;
+    }
+
+    #rsvp-form #attendee-rsvp-wedding-info h4{
+        font: normal 1.5em/100% 'Oswald', serif;
+        margin:0;
+    }
+
+    #rsvp-form #attendee-rsvp-wedding-info h5{
+        font: bold 1.2em/100% 'Lora', serif;
+        margin:0;
+    }
+
+    .plus-one-wrapper input[type=text] {
+        font: normal 1.2em/50% 'Oswald', Arial;
+        height: 2.2em;
+    }
+
+    #attendee-rsvp-complete-wedding-info h3 {
+        font: bold 1em/100% 'Sacramento', Arial;
+    }
+
+    #travel .interior-article-wrapper-nested{
+        min-width: 10em;
+    }
+       
+    #accomodations-main-image img, 
+    #directions-main-image img {
+        min-width: 10em;
+        max-width: 10em;
+    }
+
+    #contact-form input[type=text],
+    #contact-form input[type=email]{
+        width: 200px;
+    }
+
+    #contact-form textarea {
+        font: normal 1em/120% 'Montserrat', Arial;
+    }
+
+    #follow-us-sm-ul {
+    display: flex;
+        justify-content: center;
+    }
+
+    #follow-us-sm-ul li{
+        display: inline-flex;
+        margin: 10px 20px;
+    }
+
+    #follow-us-sm-ul img{
+        height: 80px;
+        width: 80px;
+    }
+
+
+    #footer-sitemap {
+        margin: 0 .5em 2em .5em;
+    }
+
+}
+
+@media (max-width: 330px) {
+
+
+    .rsvp-top-filigree-image , 
+    .rsvp-bottom-filigree-image {
+        max-width: 12em;
+    }
+
+    #rsvp-form input[type=button]{
+        font: normal .75em/100% 'Oswald', Arial, sans-serif;
+        width: 8.5em;
+    }
+
+    #rsvp-form input[type=button]:active{
+        font: normal .75em/100% 'Oswald', Arial, sans-serif;
+        width: 8.5em;
+    }
+
+    #footer-backer-filigree{
+        width: 17em;
+        top: .8em;
+    }
+}
+
+@media (max-width: 300px) {
+
+        #attendee-results-box input[type=Submit] { /*the select button */
+        font: bold 1.4em/100% 'Oswald', Arial, sans-serif;
+        margin: .5em 0 .5em 0;
+        padding: .7em 2em;
+        min-width: 10%;
+    }
